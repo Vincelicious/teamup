@@ -15,7 +15,7 @@ Make sure you have installed all of the following prerequisites on your developm
 
 ```bash
 # Clone project
-git clone https://github.com/PanJiaChen/vue-element-admin.git
+git clone https://github.com/Vincelicious/teamup.git
 
 # Install dependencies
 npm install
