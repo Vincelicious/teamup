@@ -17,6 +17,9 @@ Make sure you have installed all of the following prerequisites on your developm
 # Clone project
 git clone https://github.com/Vincelicious/teamup.git
 
+# Change directory
+cd teamup
+
 # Install dependencies
 npm install
 
