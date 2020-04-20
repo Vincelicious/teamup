@@ -1,12 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/groupoverview">Group Overview</router-link>
-    </div>
+    <div id="nav"><router-link to="/">Home</router-link></div>
+
     <router-view />
+
+    <NavBar />
   </div>
 </template>
+
+<script>
+import NavBar from "@/components/Base/NavBar.vue";
+
+export default {
+  components: {
+    NavBar
+  }
+};
+</script>
 
 <style>
 #app {

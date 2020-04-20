@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import GroupOverview from '../views/GroupOverview.vue';
+import GroupList from "../views/GroupList";
 
 Vue.use(VueRouter);
 
@@ -12,9 +12,9 @@ const routes = [
     component: Home
   },
   {
-    path: "/groupoverview",
-    name: "group-overview",
-    component: GroupOverview
+    path: "/group-list",
+    name: "Group List",
+    component: GroupList
   }
 
 ];
