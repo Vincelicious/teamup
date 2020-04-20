@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-import GroupList from "../views/GroupList";
+
 
 Vue.use(VueRouter);
 
@@ -9,12 +8,32 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: () => import("../views/Home.vue")
   },
   {
     path: "/group-list",
     name: "Group List",
-    component: GroupList
+    component: () => import("../views/GroupList.vue")
+  },
+  {
+    path: "/my-group",
+    name: "My Group",
+    component: () => import("../views/MyGroup.vue")
+  },
+  {
+    path: "/progress",
+    name: "Progress",
+    component: () => import("../views/Progress.vue")
+  },
+  {
+    path: "/settings",
+    name: "Settings",
+    component: () => import("../views/Settings.vue")
+  },
+  {
+    path: "/training",
+    name: "Training",
+    component: () => import("../views/Training.vue")
   }
 
 ];
