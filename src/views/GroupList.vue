@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import GroupCard from "@/components/GroupCard.vue";
+import GroupCard from "@/components/GroupList/GroupCard.vue";
 
 export default {
   components: {
@@ -37,5 +37,3 @@ export default {
 </script>
 
 <style lang="scss" scoped></style>
-
-
