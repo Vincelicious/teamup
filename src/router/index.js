@@ -34,6 +34,11 @@ const routes = [
     path: "/training",
     name: "Training",
     component: () => import("../views/Training.vue")
+  },
+  {
+    path: "/single-group",
+    name: "Single Group",
+    component: () => import("../components/GroupList/SingleGroup.vue")
   }
 ];
 
