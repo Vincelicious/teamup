@@ -16,24 +16,50 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+
+
+/* Font Styling */
+
+h1 {
+  font-family: Lato;
+  font-size: 23px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 200;
+  line-height: 28px;
+}
+h2 {
+  font-family: Lato;
+  font-size: 19px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 15.4px;
+}
+h3 {
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 15.4px;
+}
+p {
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
 }
 
-#nav {
-  padding: 30px;
-}
+/* Feather Icons Styling */
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+svg.feather {
+  margin-right: 0.5em;
+  height: 1.2em;
+  width: 1.2em;
 
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
