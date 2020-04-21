@@ -1,20 +1,24 @@
 <template>
-  <div>
-    <h1>Create group</h1>
-    <input type="text" id="name" v-model="group.name" placeholder="groupname" />
+  <div class="flex flex-col justify-center bg-gray-200 content-center">
+    <span>Groupname: {{ group.name }}</span>
+    <input
+      type="text"
+      class="justify-center content-center m-4 bg-gray-400"
+      id="name"
+      v-model="group.name"
+      placeholder="groupname"
+    />
 
-    <p>Groupname: {{ group.name }}</p>
-    <div class="goal">
+    <span>Goal: {{ group.goal }}</span>
+    <div class="justify-center content-center m-4 bg-gray-400">
       <input type="radio" id="quarter" value="Quarter" v-model="group.goal" />
       <input type="radio" id="half" value="Half" v-model="group.goal" />
-
       <input type="radio" id="full" value="Full" v-model="group.goal" />
-      <br />
-      <span>Picked Goal: {{ group.goal }}</span>
-      <br />
     </div>
 
-    <div class="trainingsDays">
+    <span>Trainingsdag {{ group.trainingDays }}</span>
+
+    <div class="justify-center content-center m-4 bg-gray-400">
       <input
         type="checkbox"
         id="maandag"
@@ -59,7 +63,12 @@
       />
     </div>
 
-    <span>Trainingsdag {{ group.trainingDays }}</span>
+    <button
+      class=" justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+      v-on:click="create"
+    >
+      Create
+    </button>
   </div>
 </template>
 
@@ -73,7 +82,12 @@ export default {
         goal: ""
       }
     };
-  }
+  },
+    methods: {
+        create:function(){
+            console.log({groupname:this.group.name, goal:this.group.goal, trainingDays:this.group.trainingDays})
+        }
+    }
 };
 </script>
 
