@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-
 Vue.use(VueRouter);
 
 const routes = [
@@ -35,7 +34,6 @@ const routes = [
     name: "Training",
     component: () => import("../views/Training.vue")
   }
-
 ];
 
 const router = new VueRouter({

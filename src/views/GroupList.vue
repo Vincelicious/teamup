@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import GroupCard from "@/components/GroupCard.vue";
+import GroupCard from "@/components/GroupList/GroupCard.vue";
 
 export default {
   components: {
@@ -18,17 +18,29 @@ export default {
         {
           id: 1,
           name: "Speedrunners",
-          km: 3
+          level: "Advanced",
+          location: 3,
+          members: 3,
+          groupmax: 4,
+          goal: "Full Marathon"
         },
         {
           id: 2,
           name: "Slowrunners",
-          km: 1
+          level: "Beginner",
+          location: 1,
+          members: 5,
+          groupmax: 6,
+          goal: "Quarter Marathon"
         },
         {
           id: 3,
           name: "Hardrunners",
-          km: 1
+          level: "Intermediate",
+          location: 1,
+          members: 4,
+          groupmax: 5,
+          goal: "Half Marathon"
         }
       ]
     };
@@ -37,5 +49,3 @@ export default {
 </script>
 
 <style lang="scss" scoped></style>
-
-
