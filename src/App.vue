@@ -26,7 +26,7 @@ h1 {
   font-size: 23px;
   font-style: normal;
   font-variant: normal;
-  font-weight: 200;
+  font-weight: 800;
   line-height: 28px;
 }
 h2 {
@@ -54,12 +54,5 @@ p {
   line-height: 20px;
 }
 
-/* Feather Icons Styling */
 
-svg.feather {
-  margin-right: 0.5em;
-  height: 1.2em;
-  width: 1.2em;
-
-}
 </style>
