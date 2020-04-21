@@ -2,33 +2,17 @@
   <div>
     <h1>Create group</h1>
     <input type="text" id="name" v-model="group.name" placeholder="groupname" />
-    
+
     <p>Groupname: {{ group.name }}</p>
     <div class="goal">
-            <input
-        type="radio"
-        id="quarter"
-        value="Quarter"
-        v-model="group.goal"
-      />   
-            <input
-        type="radio"
-        id="half"
-        value="Half"
-        v-model="group.goal"
-      />
+      <input type="radio" id="quarter" value="Quarter" v-model="group.goal" />
+      <input type="radio" id="half" value="Half" v-model="group.goal" />
 
-            <input
-        type="radio"
-        id="full"
-        value="Full"
-        v-model="group.goal"
-      />
- <br>
- <span>Picked Goal: {{ group.goal }}</span>
- <br>
- </div>
-    
+      <input type="radio" id="full" value="Full" v-model="group.goal" />
+      <br />
+      <span>Picked Goal: {{ group.goal }}</span>
+      <br />
+    </div>
 
     <div class="trainingsDays">
       <input
@@ -93,7 +77,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-
-</style>
+<style scoped></style>
