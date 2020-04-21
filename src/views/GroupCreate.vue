@@ -42,7 +42,7 @@
       />
       <input
         type="checkbox"
-        id="zondag"
+        id="Zondag"
         value="Zondag"
         v-model="group.trainingDays"
       />
