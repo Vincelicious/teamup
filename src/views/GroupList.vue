@@ -10,6 +10,7 @@
 <script>
 import GroupCard from "@/components/GroupList/GroupCard.vue";
 import TopBar from "@/components/Base/TopBar.vue";
+import EventService from "@/services/EventService.js";
 
 export default {
   components: {
@@ -18,67 +19,20 @@ export default {
   },
   data() {
     return {
-      groups: [
-        {
-          id: 1,
-          name: "Speedrunners",
-          level: "Advanced",
-          location: 3,
-          members: 3,
-          groupmax: 4,
-          goal: "Full Marathon"
-        },
-        {
-          id: 2,
-          name: "Slowrunners",
-          level: "Beginner",
-          location: 1,
-          members: 5,
-          groupmax: 6,
-          goal: "Quarter Marathon"
-        },
-        {
-          id: 3,
-          name: "Hardrunners",
-          level: "Intermediate",
-          location: 1,
-          members: 4,
-          groupmax: 5,
-          goal: "Half Marathon"
-        },
-        {
-          id: 1,
-          name: "Speedrunners",
-          level: "Advanced",
-          location: 3,
-          members: 3,
-          groupmax: 4,
-          goal: "Full Marathon"
-        },
-        {
-          id: 2,
-          name: "Slowrunners",
-          level: "Beginner",
-          location: 1,
-          members: 5,
-          groupmax: 6,
-          goal: "Quarter Marathon"
-        },
-        {
-          id: 3,
-          name: "Hardrunners",
-          level: "Intermediate",
-          location: 1,
-          members: 4,
-          groupmax: 5,
-          goal: "Half Marathon"
-        }
-      ]
+      groups: []
     };
+  },
+  created() {
+     EventService.getGroups()
+      .then(response => {
+        this.groups = response.data; // <--- set the events data
+      })
+      .catch(error => {
+        console.log("There was an error:", error.response);
+      });
   }
 };
 </script>
 
 <style scoped>
-
 </style>
