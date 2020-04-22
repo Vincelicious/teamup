@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john@gmail.com",
+      "age": 34,
+      "groupId": null,
+      "id": "OJ23ENKV"
+    },
+    {
+      "firstName": "Jos",
+      "lastName": "van Brekel",
+      "email": "jos@gmail.com",
+      "age": 55,
+      "groupId": "1",
+      "id": "Y322AS1K"
+    },
+    {
+      "firstName": "Post",
+      "lastName": "Man",
+      "email": "postman@gmail.com",
+      "age": 12,
+      "groupId": "3",
+      "id": "jfI_QkO"
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "name": "The Maze Runners",
+      "description": "De leukste groep voor jonge renners in Eindhoven!",
+      "goal": "fullMarathon",
+      "level": "advanced",
+      "location": {
+        "lat": 51.4416,
+        "lon": 5.4697
+      },
+      "groupmax": 6,
+      "trainingdays": {
+        "ma": true,
+        "di": true,
+        "wo": true,
+        "do": false,
+        "vr": false,
+        "za": true,
+        "zo": false
+      }
+
+    },
+    {
+      "id": "2",
+      "name": "The Antelopes",
+      "description": "Running groep Maarheeze",
+      "goal": "5k",
+      "level": "beginner",
+      "location": {
+        "lat": 51.308799,
+        "lon": 5.617105
+      },
+      "groupmax": 10,
+      "trainingdays": {
+        "ma": false,
+        "di": false,
+        "wo": false,
+        "do": true,
+        "vr": true,
+        "za": true,
+        "zo": false
+      }
+    }
+  ],
+  "groupAchievements": [
+    {}
+  ]
+}
