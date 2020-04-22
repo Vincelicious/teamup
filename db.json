@@ -34,7 +34,7 @@
       "level": "advanced",
       "location": {
         "lat": 51.4416,
-        "lon": 5.4697
+        "lng": 5.4697
       },
       "groupmax": 6,
       "members": 3,
@@ -57,7 +57,7 @@
       "level": "beginner",
       "location": {
         "lat": 51.308799,
-        "lon": 5.617105
+        "lng": 5.617105
       },
       "members": 6,
       "groupmax": 10,
