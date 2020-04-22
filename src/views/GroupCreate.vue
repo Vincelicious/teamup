@@ -3,14 +3,14 @@
     <span>Groupname: {{ group.name }}</span>
     <input
       type="text"
-      class="justify-center content-center m-4 bg-gray-400"
+      class="justify-center content-center m-4 bg-gray-600 text-white"
       id="name"
       v-model="group.name"
       placeholder="groupname"
     />
 
     <span>Goal: {{ group.goal }}</span>
-    <div class="justify-center content-center m-4 bg-gray-400">
+    <div class="justify-center content-center m-4 bg-gray-600">
       <input type="radio" id="quarter" value="Quarter" v-model="group.goal" />
       <input type="radio" id="half" value="Half" v-model="group.goal" />
       <input type="radio" id="full" value="Full" v-model="group.goal" />
@@ -18,7 +18,7 @@
 
     <span>Trainingsdag {{ group.trainingDays }}</span>
 
-    <div class="justify-center content-center m-4 bg-gray-400">
+    <div class="justify-center content-center m-4 bg-gray-600">
       <input
         type="checkbox"
         id="maandag"
@@ -83,11 +83,15 @@ export default {
       }
     };
   },
-    methods: {
-        create:function(){
-            console.log({groupname:this.group.name, goal:this.group.goal, trainingDays:this.group.trainingDays})
-        }
+  methods: {
+    create: function() {
+      console.log({
+        groupname: this.group.name,
+        goal: this.group.goal,
+        trainingDays: this.group.trainingDays
+      });
     }
+  }
 };
 </script>
 
