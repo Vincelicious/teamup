@@ -101,7 +101,7 @@ export default {
     };
   },
   methods: {
-    create: function() {
+    create: () => {
       GroupService.createGroup({
         name: this.group.name,
         goal: this.group.goal,
@@ -119,8 +119,7 @@ export default {
   },
   created() {
     this.$getLocation().then(coordinates => {
-      this.group.location = { lat: coordinates.lat, lon: coordinates.lng };
-      console.log(coordinates);
+      this.group.location = { lat: coordinates.lat, lng: coordinates.lng };
     });
   }
 };
