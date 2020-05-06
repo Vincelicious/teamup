@@ -69,9 +69,6 @@
 
     <vue-slider v-model="group.groupsize" />
 
-    <span>Maximum distance {{ group.location }} km</span>
-
-    <vue-slider v-model="group.location" />
     <div id="button" class=" flex justify-center m-4">
       <button
         class=" flex justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-3/5"
@@ -99,14 +96,14 @@ export default {
         trainingDays: [],
         goal: "",
         groupsize: "",
-        location: ""
+        location: {}
       }
     };
   },
   methods: {
     create: function() {
       GroupService.createGroup({
-        groupname: this.group.name,
+        name: this.group.name,
         goal: this.group.goal,
         trainingDays: this.group.trainingDays,
         maxSize: this.group.groupsize,
@@ -119,6 +116,12 @@ export default {
           console.log("There was an error:", error.response);
         });
     }
+  },
+  created() {
+    this.$getLocation().then(coordinates => {
+      this.group.location = { lat: coordinates.lat, lon: coordinates.lng };
+      console.log(coordinates);
+    });
   }
 };
 </script>
