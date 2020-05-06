@@ -86,6 +86,7 @@
 <script>
 import VueSlider from "vue-slider-component";
 import "vue-slider-component/theme/antd.css";
+import GroupService from "@/services/GroupService.js";
 
 export default {
   components: {
@@ -104,13 +105,19 @@ export default {
   },
   methods: {
     create: function() {
-      console.log({
+      GroupService.createGroup({
         groupname: this.group.name,
         goal: this.group.goal,
         trainingDays: this.group.trainingDays,
         maxSize: this.group.groupsize,
         location: this.group.location
-      });
+      })
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.log("There was an error:", error.response);
+        });
     }
   }
 };
