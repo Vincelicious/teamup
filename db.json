@@ -47,7 +47,6 @@
         "za": true,
         "zo": false
       }
-
     },
     {
       "id": "2",
@@ -70,6 +69,76 @@
         "za": true,
         "zo": false
       }
+    },
+    {
+      "name": "De honden",
+      "goal": "Quarter",
+      "trainingDays": [
+        "Vrijdag",
+        "Woensdag",
+        "Maandag"
+      ],
+      "maxSize": 18,
+      "location": {
+        "lat": 51.45382970000001,
+        "lon": 6.0501344999999995,
+        "elm": {}
+      },
+      "id": "V0AhHvY"
+    },
+    {
+      "name": "De katten",
+      "goal": "Full",
+      "trainingDays": [
+        "Vrijdag",
+        "Dinsdag"
+      ],
+      "maxSize": 3,
+      "location": {
+        "lat": 51.45382970000001,
+        "lon": 6.0501344999999995
+      },
+      "id": "v1cDFuC"
+    },
+    {
+      "name": "De koala's",
+      "goal": "Half",
+      "trainingDays": [
+        "Woensdag",
+        "Vrijdag"
+      ],
+      "maxSize": 3,
+      "location": {
+        "lat": 51.4571307,
+        "lon": 6.0526135
+      },
+      "id": "HyK_PfG"
+    },
+    {
+      "name": "Michelle de Wit",
+      "goal": "Half",
+      "trainingDays": [
+        "Zaterdag"
+      ],
+      "maxSize": 54,
+      "location": {
+        "lat": 51.4574826,
+        "lng": 6.0511732
+      },
+      "id": "0yw_kCK"
+    },
+    {
+      "name": "fsd",
+      "goal": "Half",
+      "trainingDays": [
+        "Woensdag"
+      ],
+      "maxSize": 31,
+      "location": {
+        "lat": 51.4575046,
+        "lng": 6.0511672999999995
+      },
+      "id": "vwT8b_1"
     }
   ],
   "groupAchievements": [
