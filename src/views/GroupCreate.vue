@@ -1,24 +1,26 @@
 <script src="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/dist/vue-slider-component.umd.min.js"></script>
 
 <template>
-  <div class="flex flex-col justify-center bg-gray-200 content-center">
-    <span>Groupname: {{ group.name }}</span>
+  <div class="flex flex-col h-screen">
+    <span class="flex justify-start text-white mx-5 my-3">
+      Groupname
+    </span>
     <input
       type="text"
-      class="justify-center content-center m-4 bg-gray-600 text-white"
+      class="flex justify-center content-center my-2 mx-4 bg-gray-900 text-white p-3 rounded-lg"
       id="name"
       v-model="group.name"
-      placeholder="groupname"
+      placeholder="Groupname"
     />
 
-    <span>Goal: {{ group.goal }}</span>
+    <span class="flex justify-start text-white mx-5 my-3">Marathon target {{ group.goal }}</span>
     <div class="justify-center content-center m-4 bg-gray-600">
       <input type="radio" id="quarter" value="Quarter" v-model="group.goal" />
       <input type="radio" id="half" value="Half" v-model="group.goal" />
       <input type="radio" id="full" value="Full" v-model="group.goal" />
     </div>
 
-    <span>Trainingsday {{ group.trainingDays }}</span>
+    <span class="flex justify-start text-white mx-5 my-3">Trainings days</span>
 
     <div class="justify-center content-center m-4 bg-gray-600">
       <input
@@ -65,13 +67,21 @@
       />
     </div>
 
-    <span>Maximum groupsize {{ group.groupsize }}</span>
+    <span class="flex justify-start text-white mx-5 my-8">
+      Groupsize
+    </span>
+    <div class="slider">
+      <vue-slider v-model="group.groupsize" />
+    </div>
 
-    <vue-slider v-model="group.groupsize" />
-
-    <div id="button" class=" flex justify-center m-4">
+    <div id="button" class=" flex justify-between my-8 mx-5">
       <button
-        class=" flex justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-3/5"
+        class=" flex justify-center border border-highlighted-color hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg w-5/12"
+      >
+        Cancel
+      </button>
+      <button
+        class=" flex justify-center bg-highlighted-color hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg w-5/12"
         v-on:click="create"
       >
         Create
@@ -101,7 +111,7 @@ export default {
     };
   },
   methods: {
-    create: () => {
+    create: function() {
       GroupService.createGroup({
         name: this.group.name,
         goal: this.group.goal,
@@ -141,19 +151,22 @@ export default {
   box-shadow: 0 0 0 2px #a7a7a7;
 }
 
+
 /* rail style */
 .vue-slider-rail {
-  background-color: whitesmoke;
+  width: 88%;
+  margin: auto;
+  background-color: #121725;
   border-radius: 15px;
   transition: background-color 0.3s;
 }
 .vue-slider:hover .vue-slider-rail {
-  background-color: #e1e1e1;
+  background-color: #121725;
 }
 
 /* process style */
 .vue-slider-process {
-  background-color: #9cd5ff;
+  background-color: #1CB3FD;
   border-radius: 15px;
   transition: background-color 0.3s;
 }
@@ -186,8 +199,8 @@ export default {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #fff;
-  border: 2px solid #9cd5ff;
+  background-color: #1CB3FD;
+  border: 2px solid #1CB3FD;
   box-sizing: border-box;
   transition: box-shadow 0.3s, border-color 0.3s;
 }
@@ -227,7 +240,7 @@ export default {
   color: #fff;
   border-radius: 5px;
   border-color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: #1CB3FD;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transform: scale(0.9);
   transition: transform 0.3s;
