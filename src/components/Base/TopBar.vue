@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center bg-gray-600 h-14 fixed w-screen">
+  <div class="flex justify-center items-center bg-primary-color h-14 fixed w-screen ">
     <h1 class="text-white text-xl font-bold">{{ pageTitle }}</h1>
   </div>
 </template>

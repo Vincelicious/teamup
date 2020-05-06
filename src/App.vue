@@ -18,7 +18,6 @@ export default {
 <style>
 
 
-
 /* Font Styling */
 
 h1 {
@@ -54,5 +53,12 @@ p {
   line-height: 20px;
 }
 
+body {
+  background-color: theme('colors.secondary-color');
+}
+
+.icon-color {
+  color: theme('colors.highlighted-color');
+}
 
 </style>
