@@ -1,3 +1,5 @@
+<script src="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/dist/vue-slider-component.umd.min.js"></script>
+
 <template>
   <div class="flex flex-col justify-center bg-gray-200 content-center">
     <span>Groupname: {{ group.name }}</span>
@@ -16,7 +18,7 @@
       <input type="radio" id="full" value="Full" v-model="group.goal" />
     </div>
 
-    <span>Trainingsdag {{ group.trainingDays }}</span>
+    <span>Trainingsday {{ group.trainingDays }}</span>
 
     <div class="justify-center content-center m-4 bg-gray-600">
       <input
@@ -63,20 +65,21 @@
       />
     </div>
 
-    <span>Max groupsize {{ group.groupsize }}</span>
+    <span>Maximum groupsize {{ group.groupsize }}</span>
 
     <vue-slider v-model="group.groupsize" />
 
-    <span>Location {{ group.location }}</span>
+    <span>Maximum distance {{ group.location }} km</span>
 
     <vue-slider v-model="group.location" />
-
-    <button
-      class=" justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-      v-on:click="create"
-    >
-      Create
-    </button>
+    <div id="button" class=" flex justify-center m-4">
+      <button
+        class=" flex justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-3/5"
+        v-on:click="create"
+      >
+        Create
+      </button>
+    </div>
   </div>
 </template>
 
@@ -113,40 +116,59 @@ export default {
 };
 </script>
 
-<style scoped>
-.vue-slider-disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+<style
+  link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/theme/default.css"
+>
+/* component style */
+.vue-slider-disabled .vue-slider-process {
+  background-color: #a7a7a7;
+}
+.vue-slider-disabled .vue-slider-dot-handle {
+  border-color: #a7a7a7;
+}
+.vue-slider-disabled .vue-slider-mark-step-active {
+  box-shadow: 0 0 0 2px #a7a7a7;
 }
 
 /* rail style */
 .vue-slider-rail {
-  background-color: #ccc;
+  background-color: whitesmoke;
   border-radius: 15px;
+  transition: background-color 0.3s;
+}
+.vue-slider:hover .vue-slider-rail {
+  background-color: #e1e1e1;
 }
 
 /* process style */
 .vue-slider-process {
-  background-color: #3498db;
+  background-color: #9cd5ff;
   border-radius: 15px;
+  transition: background-color 0.3s;
+}
+.vue-slider:hover .vue-slider-process {
+  background-color: #69c0ff;
 }
 
 /* mark style */
-.vue-slider-mark {
-  z-index: 4;
-}
-.vue-slider-mark:first-child .vue-slider-mark-step,
-.vue-slider-mark:last-child .vue-slider-mark-step {
-  display: none;
-}
 .vue-slider-mark-step {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.16);
+  box-shadow: 0 0 0 2px #e8e8e8;
+  background-color: #fff;
 }
+.vue-slider-mark-step-active {
+  box-shadow: 0 0 0 2px #9cd5ff;
+}
+.vue-slider:hover .vue-slider-mark-step-active {
+  box-shadow: 0 0 0 2px #69c0ff;
+}
+
 .vue-slider-mark-label {
-  font-size: 14px;
+  font-size: 12px;
   white-space: nowrap;
 }
 /* dot style */
@@ -156,29 +178,50 @@ export default {
   height: 100%;
   border-radius: 50%;
   background-color: #fff;
+  border: 2px solid #9cd5ff;
   box-sizing: border-box;
-  box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32);
+  transition: box-shadow 0.3s, border-color 0.3s;
 }
+.vue-slider:hover .vue-slider-dot-handle {
+  border-color: #69c0ff;
+}
+
 .vue-slider-dot-handle-focus {
-  box-shadow: 0px 0px 1px 2px rgba(52, 152, 219, 0.36);
+  border-color: #36abff;
+  box-shadow: 0 0 0 5px rgba(54, 171, 255, 0.2);
+}
+.vue-slider:hover .vue-slider-dot-handle-focus {
+  border-color: #36abff;
+}
+
+.vue-slider-dot-handle:hover {
+  border-color: #36abff;
+}
+.vue-slider:hover .vue-slider-dot-handle:hover {
+  border-color: #36abff;
 }
 
 .vue-slider-dot-handle-disabled {
   cursor: not-allowed;
-  background-color: #ccc;
+  border-color: #ddd !important;
 }
 
+.vue-slider-dot-tooltip {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
 .vue-slider-dot-tooltip-inner {
   font-size: 14px;
   white-space: nowrap;
-  padding: 2px 5px;
-  min-width: 20px;
-  text-align: center;
+  padding: 6px 8px;
   color: #fff;
   border-radius: 5px;
-  border-color: #3498db;
-  background-color: #3498db;
-  box-sizing: content-box;
+  border-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transform: scale(0.9);
+  transition: transform 0.3s;
 }
 .vue-slider-dot-tooltip-inner::after {
   content: "";
@@ -228,12 +271,26 @@ export default {
   border-width: 5px;
   border-right-color: inherit;
 }
-
-.vue-slider-dot-tooltip-wrapper {
-  opacity: 0;
-  transition: all 0.3s;
+.vue-slider-dot-tooltip-inner-top {
+  transform-origin: 50% 100%;
 }
-.vue-slider-dot-tooltip-wrapper-show {
+.vue-slider-dot-tooltip-inner-bottom {
+  transform-origin: 50% 0;
+}
+.vue-slider-dot-tooltip-inner-left {
+  transform-origin: 100% 50%;
+}
+.vue-slider-dot-tooltip-inner-right {
+  transform-origin: 0% 50%;
+}
+
+.vue-slider-dot:hover .vue-slider-dot-tooltip,
+.vue-slider-dot-tooltip-show {
   opacity: 1;
+  visibility: visible;
+}
+.vue-slider-dot:hover .vue-slider-dot-tooltip .vue-slider-dot-tooltip-inner,
+.vue-slider-dot-tooltip-show .vue-slider-dot-tooltip-inner {
+  transform: scale(1);
 }
 </style>
