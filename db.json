@@ -30,44 +30,44 @@
       "id": "1",
       "name": "The Maze Runners",
       "description": "De leukste groep voor jonge renners in Eindhoven!",
-      "goal": "fullMarathon",
+      "goal": "Full Marathon",
       "level": "advanced",
       "location": {
         "lat": 51.4416,
         "lng": 5.4697
       },
-      "groupmax": 6,
+      "groupmax": 10,
       "members": 3,
       "trainingdays": {
-        "ma": true,
-        "di": true,
-        "wo": true,
-        "do": false,
-        "vr": false,
-        "za": true,
-        "zo": false
+        "Mo": true,
+        "Tu": true,
+        "We": true,
+        "Th": false,
+        "Fr": false,
+        "Sa": true,
+        "Su": false
       }
     },
     {
       "id": "2",
       "name": "The Antelopes",
       "description": "Running groep Maarheeze",
-      "goal": "5k",
+      "goal": "Half Marathon",
       "level": "beginner",
       "location": {
         "lat": 51.308799,
         "lng": 5.617105
       },
       "members": 6,
-      "groupmax": 10,
+      "groupmax": 9,
       "trainingdays": {
-        "ma": false,
-        "di": false,
-        "wo": false,
-        "do": true,
-        "vr": true,
-        "za": true,
-        "zo": false
+        "Mo": false,
+        "Tu": false,
+        "We": false,
+        "Th": true,
+        "Fr": true,
+        "Sa": true,
+        "Su": false
       }
     },
     {
@@ -139,6 +139,48 @@
         "lng": 6.0511672999999995
       },
       "id": "vwT8b_1"
+    },
+    {
+      "name": "Michelle de Wit",
+      "goal": "Half",
+      "trainingDays": [
+        "Zaterdag",
+        "Woensdag"
+      ],
+      "maxSize": 24,
+      "location": {
+        "lat": 51.45382970000001,
+        "lng": 6.0501344999999995
+      },
+      "id": "C1WuhUX"
+    },
+    {
+      "name": "Brainstorm",
+      "goal": "Half",
+      "trainingDays": [
+        "Vrijdag",
+        "Dinsdag"
+      ],
+      "maxSize": 20,
+      "location": {
+        "lat": 51.457485999999996,
+        "lng": 6.051296300000001
+      },
+      "id": "iFWOPik"
+    },
+    {
+      "name": "De katten",
+      "goal": "Half",
+      "trainingDays": [
+        "Donderdag",
+        "Woensdag"
+      ],
+      "maxSize": 25,
+      "location": {
+        "lat": 51.4571414,
+        "lng": 6.051238
+      },
+      "id": "MGVObya"
     }
   ],
   "groupAchievements": [
