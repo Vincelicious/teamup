@@ -1,39 +1,38 @@
 <template>
   <div>
-    <h1>Group List</h1>
-    <GroupCard v-for="group in groups" :key="group.id" :group="group" />
+    <TopBar pageTitle="Group List"></TopBar>
+    <div class="pt-16 mb-16">
+      <GroupCard v-for="group in groups" :key="group.id" :group="group" />
+    </div>
   </div>
 </template>
 
 <script>
-import GroupCard from "@/components/GroupCard.vue";
+import GroupCard from "@/components/GroupList/GroupCard.vue";
+import TopBar from "@/components/Base/TopBar.vue";
+import EventService from "@/services/EventService.js";
 
 export default {
   components: {
-    GroupCard
+    GroupCard,
+    TopBar
   },
   data() {
     return {
-      groups: [
-        {
-          id: 1,
-          name: "Speedrunners",
-          km: 3
-        },
-        {
-          id: 2,
-          name: "Slowrunners",
-          km: 1
-        },
-        {
-          id: 3,
-          name: "Hardrunners",
-          km: 1
-        }
-      ]
+      groups: []
     };
+  },
+  created() {
+     EventService.getGroups()
+      .then(response => {
+        this.groups = response.data; // <--- set the events data
+      })
+      .catch(error => {
+        console.log("There was an error:", error.response);
+      });
   }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+</style>
