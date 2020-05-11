@@ -18,6 +18,11 @@ export default {
 <style>
 
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
 /* Font Styling */
 
 h1 {
