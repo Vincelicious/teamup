@@ -1,7 +1,7 @@
 <template>
   <div>
     <TopBar pageTitle="Group List"></TopBar>
-    <div class="pt-14">
+    <div class="pt-16 mb-16">
       <GroupCard v-for="group in groups" :key="group.id" :group="group" />
     </div>
   </div>
