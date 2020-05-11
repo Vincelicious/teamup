@@ -4,6 +4,7 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import "@/assets/css/tailwind.css";
+import VueGeolocation from "vue-browser-geolocation";
 
 Vue.config.productionTip = false;
 
@@ -12,3 +13,5 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount("#app");
+
+Vue.use(VueGeolocation);
