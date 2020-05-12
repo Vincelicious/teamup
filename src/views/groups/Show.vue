@@ -17,17 +17,24 @@
         {{ group.goal }}
       </span>
 
-      <div class="text-white flex items-center mt-8">
+      <div class="text-white flex items-center mt-8 mb-2">
         <BaseIcon class="mr-2" name="calendar" width="16" height="16" />
         <h4>Training Days</h4>
       </div>
-      <TrainingDays class="mt-2" :trainingDays="selectedTrainingDays" />
+      <TrainingDays :trainingDays="selectedTrainingDays" />
+
+      <div class="text-white flex items-center mt-8 mb-2">
+        <BaseIcon class="mr-2" name="map-pin" width="16" height="16" />
+        <h4>Meeting Point</h4>
+      </div>
+      <div id="map" class="w-full h-24 rounded-lg overflow-hidden"></div>
     </div>
   </div>
 </template>
 
 <script>
 import TrainingDays from "@/components/groups/TrainingDays";
+import mapboxgl from "mapbox-gl";
 
 export default {
   components: {
@@ -43,6 +50,22 @@ export default {
     return {
       selectedTrainingDays: ["tu", "fr"]
     };
+  },
+  mounted() {
+    this.createMap();
+  },
+  methods: {
+    createMap() {
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoidmluY2VsaWNpb3VzIiwiYSI6ImNrMjMxNnZrdTBwenkzaG9jMnd1NW5paXYifQ.bNaLnMChvRiZsZL4B2xSDQ";
+
+      this.map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [this.group.location.lng, this.group.location.lat],
+        zoom: 16
+      });
+    }
   }
 };
 </script>
