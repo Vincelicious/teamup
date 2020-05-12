@@ -5,7 +5,9 @@
     </div>
 
     <div class="bg-darkened-color flex justify-evenly text-white">
-      <div class="py-4 flex-1 text-center">Group</div>
+      <div class="py-4 flex-1 text-center border-b-4 border-highlighted-color">
+        Group
+      </div>
       <div class="py-4 flex-1 text-center">Scheme</div>
       <div class="py-4 flex-1 text-center">Chat</div>
     </div>
@@ -28,6 +30,11 @@
         <h4>Meeting Point</h4>
       </div>
       <div id="map" class="w-full h-24 rounded-lg overflow-hidden"></div>
+
+      <div class="text-white flex items-center mt-8 mb-2">
+        <BaseIcon class="mr-2" name="users" width="16" height="16" />
+        <h4>Members</h4>
+      </div>
     </div>
   </div>
 </template>
