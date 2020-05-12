@@ -7,11 +7,6 @@ const state = {
 const getters = {
   getUserById: state => id => {
     return state.users.find(user => user.id == id);
-  },
-  getUsersByGroupId: (state, getters, rootState, rootGetters) => id => {
-    return state.users.filter(user => {
-      rootGetters["group/getGroupById"](id).members.includes(user.id);
-    });
   }
 };
 

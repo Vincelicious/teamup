@@ -13,7 +13,7 @@
     </div>
 
     <div class="container mx-auto px-4 py-8">
-      <h3 class="text-white text-2xl mb-2">{{ group.name }}</h3>
+      <h3 class="text-white text-2xl mt-4 mb-2">{{ group.name }}</h3>
       <span class="text-white flex items-center">
         <BaseIcon class="mr-2" name="target" width="16" height="16" />
         {{ group.goal }}
@@ -35,6 +35,13 @@
         <BaseIcon class="mr-2" name="users" width="16" height="16" />
         <h4>Members</h4>
       </div>
+      <div class="mb-16 flex space-x-4">
+        <Member
+          v-for="member in group.members"
+          :key="member"
+          :member="member"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -42,11 +49,12 @@
 <script>
 import TrainingDays from "@/components/groups/TrainingDays";
 import mapboxgl from "mapbox-gl";
-import { mapGetters } from "vuex";
+import Member from "@/components/groups/Member";
 
 export default {
   components: {
-    TrainingDays
+    TrainingDays,
+    Member
   },
   props: {
     group: {
@@ -61,11 +69,6 @@ export default {
   },
   mounted() {
     this.createMap();
-  },
-  computed: {
-    ...mapGetters({
-      users: "user/getUsersByGroupId"
-    })
   },
   methods: {
     createMap() {
@@ -82,5 +85,3 @@ export default {
   }
 };
 </script>
-
-<style lang="postcss" scoped></style>

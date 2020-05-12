@@ -21,6 +21,7 @@ const routes = [
     props: true,
     component: () => import("../views/groups/Show.vue"),
     beforeEnter(routeTo, routeFrom, next) {
+      store.dispatch("user/fetchUsers");
       store
         .dispatch("group/fetchGroup", routeTo.params.id)
         .then(group => {
