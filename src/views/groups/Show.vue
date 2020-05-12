@@ -42,6 +42,7 @@
 <script>
 import TrainingDays from "@/components/groups/TrainingDays";
 import mapboxgl from "mapbox-gl";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
@@ -60,6 +61,11 @@ export default {
   },
   mounted() {
     this.createMap();
+  },
+  computed: {
+    ...mapGetters({
+      users: "user/getUsersByGroupId"
+    })
   },
   methods: {
     createMap() {
