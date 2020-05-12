@@ -56,7 +56,7 @@ export default {
   },
   data() {
     return {
-      selectedTrainingDays: ["tu", "fr"]
+      selectedTrainingDays: ["tu", "sa"]
     };
   },
   mounted() {
