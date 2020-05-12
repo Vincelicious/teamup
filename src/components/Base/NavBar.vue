@@ -1,22 +1,71 @@
 <template>
-  <div>
-    <h1 class="title">NavBar</h1>
-    <!-- <router-link :to="{ name: 'Home' }">Home</router-link> -->
-    <router-link :to="{ name: 'Group List' }">Group List</router-link>
-    <router-link :to="{ name: 'My Group' }">My Group</router-link>
-    <router-link :to="{ name: 'Training' }">Training</router-link>
-    <router-link :to="{ name: 'Progress' }">Progress</router-link>
-    <router-link :to="{ name: 'Settings' }">Settings</router-link>
-    <router-link :to="{ name: 'Group Create' }">Group Create</router-link>
+  <div class="nav-bar">
+    <div class="menu-item">
+      <PauseIcon class="flip"></PauseIcon>
+      <router-link :to="{ name: 'Group List' }">Grouplist</router-link>
+    </div>
+    <div class="menu-item">
+      <UsersIcon></UsersIcon>
+      <router-link :to="{ name: 'My Group' }">My Group</router-link>
+    </div>
+    <div class="menu-item">
+      <ZapIcon></ZapIcon>
+      <router-link :to="{ name: 'Training' }">Training</router-link>
+    </div>
+    <div class="menu-item">
+      <TrendingUpIcon></TrendingUpIcon>
+      <router-link :to="{ name: 'Progress' }">Progress</router-link>
+    </div>
+    <div class="menu-item">
+      <MoreHorizontalIcon></MoreHorizontalIcon>
+      <router-link :to="{ name: 'Settings' }">More</router-link>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import {
+  PauseIcon,
+  UsersIcon,
+  TrendingUpIcon,
+  MoreHorizontalIcon,
+  ZapIcon
+} from "vue-feather-icons";
+
+export default {
+  components: { PauseIcon, UsersIcon, TrendingUpIcon, MoreHorizontalIcon, ZapIcon }
+};
 </script>
 
 <style scoped>
-.title {
-  color: green;
+.nav-bar {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #212131;
+  font-size: 9pt;
+  font-weight: 500;
+  height: 56px;
 }
+.menu-item {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  width: 20vw;
+}
+
+.flip {
+  transform: rotate(90deg);
+  
+}
+
+.menu-item:hover,
+.menu-item.router-link-active,
+.menu-item.router-link-exact-active {
+   color: #1CB3FD;
+   cursor: pointer;
+ }
 </style>
