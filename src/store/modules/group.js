@@ -1,4 +1,4 @@
-import GroupService from "@services/GroupService";
+import GroupService from "@/services/GroupService";
 
 const state = {
   groups: [],
@@ -25,6 +25,16 @@ const actions = {
     GroupService.getGroups()
       .then(response => {
         commit("SET_GROUPS", response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },
+  fetchGroup({ commit }, id) {
+    return GroupService.getGroup(id)
+      .then(response => {
+        commit("SET_GROUP", response.data);
+        return response.data;
       })
       .catch(error => {
         console.error(error);

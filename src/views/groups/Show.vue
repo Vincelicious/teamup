@@ -11,13 +11,20 @@
     </div>
 
     <div class="container mx-auto px-4">
-      <h3>The Antelopes</h3>
+      <h3>{{ group }}</h3>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    group: {
+      type: Object,
+      required: true
+    }
+  }
+};
 </script>
 
 <style lang="postcss" scoped></style>

@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import store from "../store";
 
 Vue.use(VueRouter);
 
@@ -18,7 +19,18 @@ const routes = [
     path: "/groups/:id",
     name: "groups.show",
     props: true,
-    component: () => import("../views/groups/Show.vue")
+    component: () => import("../views/groups/Show.vue"),
+    beforeEnter(routeTo, routeFrom, next) {
+      store
+        .dispatch("group/fetchGroup", routeTo.params.id)
+        .then(group => {
+          routeTo.params.group = group;
+          next();
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
   },
   {
     path: "/my-group",

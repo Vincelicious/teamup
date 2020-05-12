@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-import group from "modules/group";
+import group from "@/store/modules/group";
 
 Vue.use(Vuex);
 
