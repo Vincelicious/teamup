@@ -16,28 +16,55 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
-#nav {
-  padding: 30px;
-}
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+/* Font Styling */
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+h1 {
+  font-family: Lato;
+  font-size: 23px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 800;
+  line-height: 28px;
+}
+h2 {
+  font-family: Lato;
+  font-size: 19px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 15.4px;
+}
+h3 {
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 15.4px;
+}
+p {
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #fff;
 }
 
 body {
   background-color: theme('colors.secondary-color');
 }
+
+.icon-color {
+  color: theme('colors.highlighted-color');
+}
+
 </style>

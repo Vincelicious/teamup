@@ -1,87 +1,108 @@
 <script src="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/dist/vue-slider-component.umd.min.js"></script>
 
 <template>
-  <div class="flex flex-col h-screen">
-    <span class="flex justify-start text-white mx-5 my-3">
-      Groupname
-    </span>
+  <div class="flex flex-col content-center h-screen m-3  text-white ">
+    <div class="flex mb-4 mt-8">
+      <zap-icon class="card-icon" />
+      <p>Groupname</p>
+    </div>
+
     <input
       type="text"
-      class="flex justify-center content-center my-2 mx-4 bg-gray-900 text-white p-3 rounded-lg"
+      class="flex justify-center content-center  bg-gray-900  p-3 rounded-lg"
       id="name"
       v-model="group.name"
       placeholder="Groupname"
     />
 
-    <span class="flex justify-start text-white mx-5 my-3">Marathon target {{ group.goal }}</span>
-    <div class="justify-center content-center m-4 bg-gray-600">
-      <input type="radio" id="quarter" value="Quarter" v-model="group.goal" />
-      <input type="radio" id="half" value="Half" v-model="group.goal" />
-      <input type="radio" id="full" value="Full" v-model="group.goal" />
+    <div class="flex mb-4 mt-8">
+      <target-icon size="1x" class=" card-icon " />
+      <p>Marathon target</p>
     </div>
 
-    <span class="flex justify-start text-white mx-5 my-3">Trainings days</span>
+    <form class="target text-center">
+      <input type="radio" id="quarter" value="quarter" v-model="group.goal" />
+      <label for="quarter">Quarter</label>
+      <input type="radio" id="half" value="half" v-model="group.goal" />
+      <label for="half">Half</label>
+      <input type="radio" id="full" value="full" v-model="group.goal" />
+      <label for="full">Full</label>
+    </form>
 
-    <div class="justify-center content-center m-4 bg-gray-600">
-      <input
-        type="checkbox"
-        id="maandag"
-        value="Maandag"
-        v-model="group.trainingDays"
-      />
-      <input
-        type="checkbox"
-        id="dinsdag"
-        value="Dinsdag"
-        v-model="group.trainingDays"
-      />
-      <input
-        type="checkbox"
-        id="woensdag"
-        value="Woensdag"
-        v-model="group.trainingDays"
-      />
-      <input
-        type="checkbox"
-        id="donderdag"
-        value="Donderdag"
-        v-model="group.trainingDays"
-      />
-      <input
-        type="checkbox"
-        id="vrijdag"
-        value="Vrijdag"
-        v-model="group.trainingDays"
-      />
-      <input
-        type="checkbox"
-        id="zaterdag"
-        value="Zaterdag"
-        v-model="group.trainingDays"
-      />
-      <input
-        type="checkbox"
-        id="Zondag"
-        value="Zondag"
-        v-model="group.trainingDays"
-      />
+    <div class="flex mb-4 mt-8">
+      <calendar-icon class="card-icon" />
+      <p>Trainings days</p>
     </div>
 
-    <span class="flex justify-start text-white mx-5 my-8">
-      Groupsize
-    </span>
+    <form class="days text-center">
+      <input
+        type="checkbox"
+        id="monday"
+        value="monday"
+        v-model="group.trainingDays"
+      />
+      <label for="monday">Mo</label>
+      <input
+        type="checkbox"
+        id="tuesday"
+        value="tuesday"
+        v-model="group.trainingDays"
+      />
+      <label for="tuesday">Tu</label>
+      <input
+        type="checkbox"
+        id="wednesday"
+        value="wednesday"
+        v-model="group.trainingDays"
+      />
+      <label for="wednesday">We</label>
+      <input
+        type="checkbox"
+        id="thursday"
+        value="thursday"
+        v-model="group.trainingDays"
+      />
+      <label for="thursday">Th</label>
+      <input
+        type="checkbox"
+        id="friday"
+        value="friday"
+        v-model="group.trainingDays"
+      />
+      <label for="friday">Fr</label>
+      <input
+        type="checkbox"
+        id="saturday"
+        value="saturday"
+        v-model="group.trainingDays"
+      />
+      <label for="saturday">Sa</label>
+      <input
+        type="checkbox"
+        id="sunday"
+        value="sunday"
+        v-model="group.trainingDays"
+      />
+      <label for="sunday">Su</label>
+    </form>
+
+    <div class="flex mb-4 mt-8">
+      <users-icon class="card-icon" />
+      <p>Groupsize</p>
+    </div>
+
     <div class="slider">
-      <vue-slider v-model="group.groupsize" />
+      <vue-slider v-model="group.groupsize" :min="2" :max="10" :tooltip-placement="['bottom']" :tooltip="'always'" />
     </div>
 
-    <div id="button" class=" flex justify-between my-8 mx-5">
+    <div id="button" class=" flex justify-between mb-4 mt-16">
       <button
-        class=" flex justify-center border border-highlighted-color hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg w-5/12"
+        class=" flex justify-center border border-highlighted-color  py-2 px-4 rounded-lg w-5/12"
       >
         Cancel
       </button>
       <button
-        class=" flex justify-center bg-highlighted-color hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg w-5/12"
+        class=" flex justify-center bg-highlighted-color py-2 px-4 rounded-lg w-5/12"
         v-on:click="create"
       >
         Create
@@ -94,9 +115,19 @@
 import VueSlider from "vue-slider-component";
 import "vue-slider-component/theme/antd.css";
 import GroupService from "@/services/GroupService.js";
+import {
+  TargetIcon,
+  UsersIcon,
+  CalendarIcon,
+  ZapIcon
+} from "vue-feather-icons";
 
 export default {
   components: {
+    TargetIcon,
+    UsersIcon,
+    CalendarIcon,
+    ZapIcon,
     VueSlider
   },
   data: () => {
@@ -106,7 +137,8 @@ export default {
         trainingDays: [],
         goal: "",
         groupsize: "",
-        location: {}
+        location: {},
+        groupsize: 2
       }
     };
   },
@@ -140,6 +172,12 @@ export default {
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/theme/default.css"
 >
+.card-icon {
+  margin-right: 0.5em;
+  height: 1.2em;
+  width: 1.2em;
+}
+
 /* component style */
 .vue-slider-disabled .vue-slider-process {
   background-color: #a7a7a7;
@@ -151,22 +189,21 @@ export default {
   box-shadow: 0 0 0 2px #a7a7a7;
 }
 
-
 /* rail style */
 .vue-slider-rail {
-  width: 88%;
+  width: 100%;
   margin: auto;
-  background-color: #121725;
+  background-color: theme("colors.darkened-color");
   border-radius: 15px;
   transition: background-color 0.3s;
 }
 .vue-slider:hover .vue-slider-rail {
-  background-color: #121725;
+  background-color: theme("colors.darkened-color");
 }
 
 /* process style */
 .vue-slider-process {
-  background-color: #1CB3FD;
+  background-color: #1cb3fd;
   border-radius: 15px;
   transition: background-color 0.3s;
 }
@@ -199,28 +236,28 @@ export default {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #1CB3FD;
-  border: 2px solid #1CB3FD;
+  background-color: #1cb3fd;
+  border: 2px solid #1cb3fd;
   box-sizing: border-box;
   transition: box-shadow 0.3s, border-color 0.3s;
 }
 .vue-slider:hover .vue-slider-dot-handle {
-  border-color: #69c0ff;
+  border-color: #1cb3fd;
 }
 
 .vue-slider-dot-handle-focus {
-  border-color: #36abff;
+  border-color: #1cb3fd;
   box-shadow: 0 0 0 5px rgba(54, 171, 255, 0.2);
 }
 .vue-slider:hover .vue-slider-dot-handle-focus {
-  border-color: #36abff;
+  border-color: #1cb3fd;
 }
 
 .vue-slider-dot-handle:hover {
-  border-color: #36abff;
+  border-color: #1cb3fd;
 }
 .vue-slider:hover .vue-slider-dot-handle:hover {
-  border-color: #36abff;
+  border-color: #1cb3fd;
 }
 
 .vue-slider-dot-handle-disabled {
@@ -240,7 +277,7 @@ export default {
   color: #fff;
   border-radius: 5px;
   border-color: rgba(0, 0, 0, 0.75);
-  background-color: #1CB3FD;
+  background-color: #1cb3fd;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transform: scale(0.9);
   transition: transform 0.3s;
@@ -314,5 +351,52 @@ export default {
 .vue-slider-dot:hover .vue-slider-dot-tooltip .vue-slider-dot-tooltip-inner,
 .vue-slider-dot-tooltip-show .vue-slider-dot-tooltip-inner {
   transform: scale(1);
+}
+
+.target {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.target label {
+  width: 30%;
+  padding: 10px 0px;
+  background-color: theme("colors.darkened-color");
+  transition: all 0.3s;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.target input[type="radio"] {
+  display: none;
+}
+
+.target input[type="radio"]:checked + label {
+  background-color: #1cb3fd;
+}
+
+.days {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.days label {
+  width: 42px;
+  height: 42px;
+  padding: 9px 0px;
+  background-color: theme("colors.darkened-color");
+  transition: all 0.3s;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.days input[type="checkbox"] {
+  display: none;
+}
+
+.days input[type="checkbox"]:checked + label {
+  background-color: #1cb3fd;
 }
 </style>
