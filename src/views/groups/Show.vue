@@ -16,17 +16,33 @@
         <BaseIcon class="mr-2" name="target" width="16" height="16" />
         {{ group.goal }}
       </span>
+
+      <div class="text-white flex items-center mt-8">
+        <BaseIcon class="mr-2" name="calendar" width="16" height="16" />
+        <h4>Training Days</h4>
+      </div>
+      <TrainingDays class="mt-2" :trainingDays="selectedTrainingDays" />
     </div>
   </div>
 </template>
 
 <script>
+import TrainingDays from "@/components/groups/TrainingDays";
+
 export default {
+  components: {
+    TrainingDays
+  },
   props: {
     group: {
       type: Object,
       required: true
     }
+  },
+  data() {
+    return {
+      selectedTrainingDays: ["tu", "fr"]
+    };
   }
 };
 </script>
