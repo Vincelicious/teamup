@@ -15,6 +15,12 @@ const routes = [
     component: () => import("../views/GroupList.vue")
   },
   {
+    path: "/groups/:id",
+    name: "groups.show",
+    props: true,
+    component: () => import("../views/groups/Show.vue")
+  },
+  {
     path: "/my-group",
     name: "My Group",
     component: () => import("../views/MyGroup.vue")
