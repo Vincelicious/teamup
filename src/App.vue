@@ -17,6 +17,9 @@ export default {
 
 <style>
 
+body::-webkit-scrollbar {
+  display: none;
+}
 
 /* Font Styling */
 
@@ -51,6 +54,7 @@ p {
   font-variant: normal;
   font-weight: 400;
   line-height: 20px;
+  color: #fff;
 }
 
 body {
