@@ -37,7 +37,7 @@
         "lng": 5.4697
       },
       "groupmax": 10,
-      "members": 3,
+      "members": ["OJ23ENKV", "Y322AS1K", "jfI_QkO"],
       "trainingdays": {
         "Mo": true,
         "Tu": true,
@@ -58,7 +58,7 @@
         "lat": 51.308799,
         "lng": 5.617105
       },
-      "members": 6,
+      "members": ["OJ23ENKV", "Y322AS1K"],
       "groupmax": 9,
       "trainingdays": {
         "Mo": false,

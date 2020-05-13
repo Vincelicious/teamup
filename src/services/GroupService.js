@@ -13,6 +13,9 @@ export default {
   getGroups() {
     return apiClient.get("/groups");
   },
+  getGroup(id) {
+    return apiClient.get("/groups/" + id);
+  }
   createGroup(data) {
     return apiClient
       .post("/groups", data)
