@@ -21,13 +21,13 @@
       <div class="group-info flex h-full items-end">
        
         <div class="flex mr-5">
-          <UsersIcon class="card-icon"></UsersIcon><p class="min-w-8">{{ group.members }} / {{ group.groupmax }}</p>
+          <UsersIcon class="card-icon icon-color"></UsersIcon><p class="min-w-8">{{ group.members }} / {{ group.groupmax }}</p>
         </div>
          <div class="flex mr-5">
-          <MapPinIcon class="card-icon"></MapPinIcon><p>10 km</p>
+          <MapPinIcon class="card-icon icon-color"></MapPinIcon><p>10 km</p>
         </div>
         <div class="flex">
-          <TargetIcon class="card-icon"></TargetIcon><p>{{ group.goal }}</p>
+          <TargetIcon class="card-icon icon-color"></TargetIcon><p>{{ group.goal }}</p>
         </div>
       </div>
     </div>

@@ -21,6 +21,11 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
 /* Font Styling */
 
 h1 {

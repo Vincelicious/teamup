@@ -1,21 +1,24 @@
 <template>
   <div>
-    <TopBar pageTitle="Group List"></TopBar>
+    <GroupListTopBar pageTitle="Group List"></GroupListTopBar>
     <div class="pt-16 mb-16">
       <GroupCard v-for="group in groups" :key="group.id" :group="group" />
     </div>
+    <div class="create-group-btn mr-3 mb-3 flex justify-center items-center"> <PlusIcon class="text-white"/></div>
   </div>
 </template>
 
 <script>
 import GroupCard from "@/components/GroupList/GroupCard.vue";
-import TopBar from "@/components/Base/TopBar.vue";
+import GroupListTopBar from "@/components/Base/GroupListTopBar.vue";
 import EventService from "@/services/EventService.js";
+import { PlusIcon } from "vue-feather-icons";
 
 export default {
   components: {
     GroupCard,
-    TopBar
+    GroupListTopBar,
+    PlusIcon
   },
   data() {
     return {
@@ -35,4 +38,13 @@ export default {
 </script>
 
 <style scoped>
+.create-group-btn{
+  position: fixed;
+  width: 52px;
+  height: 52px;
+  bottom: 56px;
+  right: 0px;
+  background-color: theme('colors.highlighted-color');
+  border-radius: 100%;
+}
 </style>
