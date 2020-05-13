@@ -13,15 +13,11 @@
           {{ day }}
         </div>
       </div>
- 
-
-
-
       <!-- Group Info -->
       <div class="group-info flex h-full items-end">
        
         <div class="flex mr-5">
-          <UsersIcon class="card-icon icon-color"></UsersIcon><p class="min-w-8">{{ group.members }} / {{ group.groupmax }}</p>
+          <UsersIcon class="card-icon icon-color"></UsersIcon><p class="min-w-8">{{ group.members.length }} / {{ group.groupmax }}</p>
         </div>
          <div class="flex mr-5">
           <MapPinIcon class="card-icon icon-color"></MapPinIcon><p>10 km</p>
