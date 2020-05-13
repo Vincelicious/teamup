@@ -1,24 +1,29 @@
 <template>
   <div class="nav-bar">
     <div class="menu-item">
-      <PauseIcon class="flip"></PauseIcon>
-      <router-link :to="{ name: 'Group List' }">Grouplist</router-link>
+      <router-link class="menu-item" :to="{ name: 'Group List' }">
+        <PauseIcon class="flip"></PauseIcon>Grouplist
+      </router-link>
     </div>
     <div class="menu-item">
-      <UsersIcon></UsersIcon>
-      <router-link :to="{ name: 'My Group' }">My Group</router-link>
+      <router-link class="menu-item" :to="{ name: 'My Group' }">
+        <UsersIcon></UsersIcon>My Group
+      </router-link>
     </div>
     <div class="menu-item">
-      <ZapIcon></ZapIcon>
-      <router-link :to="{ name: 'Training' }">Training</router-link>
+      <router-link class="menu-item" :to="{ name: 'Training' }">
+        <ZapIcon></ZapIcon>Training
+      </router-link>
     </div>
     <div class="menu-item">
-      <TrendingUpIcon></TrendingUpIcon>
-      <router-link :to="{ name: 'Progress' }">Progress</router-link>
+      <router-link class="menu-item" :to="{ name: 'Progress' }">
+        <TrendingUpIcon></TrendingUpIcon>Progress
+      </router-link>
     </div>
     <div class="menu-item">
-      <MoreHorizontalIcon></MoreHorizontalIcon>
-      <router-link :to="{ name: 'Settings' }">More</router-link>
+      <router-link class="menu-item" :to="{ name: 'Settings' }">
+        <MoreHorizontalIcon></MoreHorizontalIcon>More
+      </router-link>
     </div>
   </div>
 </template>
@@ -33,7 +38,13 @@ import {
 } from "vue-feather-icons";
 
 export default {
-  components: { PauseIcon, UsersIcon, TrendingUpIcon, MoreHorizontalIcon, ZapIcon }
+  components: {
+    PauseIcon,
+    UsersIcon,
+    TrendingUpIcon,
+    MoreHorizontalIcon,
+    ZapIcon
+  }
 };
 </script>
 
@@ -59,13 +70,12 @@ export default {
 
 .flip {
   transform: rotate(90deg);
-  
 }
 
 .menu-item:hover,
 .menu-item.router-link-active,
 .menu-item.router-link-exact-active {
-   color: #1CB3FD;
-   cursor: pointer;
- }
+  color: #1cb3fd;
+  cursor: pointer;
+}
 </style>
