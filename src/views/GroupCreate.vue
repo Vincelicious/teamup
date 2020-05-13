@@ -1,7 +1,8 @@
 <script src="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/dist/vue-slider-component.umd.min.js"></script>
 
-<template>
-  <div class="flex flex-col content-center h-screen m-3  text-white ">
+<template><div>
+  <TopBar pageTitle="Create Group"></TopBar>
+  <div class="flex flex-col content-center h-screen mx-3 pt-10 text-white ">
     <div class="flex mb-4 mt-8">
       <zap-icon class="card-icon" />
       <p>Groupname</p>
@@ -109,10 +110,12 @@
       </button>
     </div>
   </div>
+          </div>
 </template>
 
 <script>
 import VueSlider from "vue-slider-component";
+import TopBar from "@/components/Base/TopBar.vue";
 import "vue-slider-component/theme/antd.css";
 import GroupService from "@/services/GroupService.js";
 import {
@@ -128,7 +131,8 @@ export default {
     UsersIcon,
     CalendarIcon,
     ZapIcon,
-    VueSlider
+    VueSlider,
+    TopBar
   },
   data: () => {
     return {
