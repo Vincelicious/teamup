@@ -2,6 +2,18 @@
 
 This repository contains the code for the Teamup platform. The creategroup branch contains the code for the create group functionality.
 
+In the creategroup the user can make a group which contains 
+
+  - Groupname
+  - Marathon goal
+  - Available traingdays
+  - Groupsize
+  - Get location coordinates
+
+### Demo
+
+https://www.youtube.com/watch?v=oktDxMU0gFY&feature=youtu.be
+
 ## Getting Started
 These instructions will get you a copy of the project up and running on your development enviroment.
 
@@ -28,6 +40,7 @@ npm run dev
 ```
 
 That's it! The project should be live at `http://localhost:8080`
+
 
 ## License
 
