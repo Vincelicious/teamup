@@ -1,6 +1,6 @@
 # Teamup
 
-This repository contains the code for the Teamup platform.
+This repository contains the code for the Teamup platform. The creategroup branch contains the code for the create group functionality.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your development enviroment.
