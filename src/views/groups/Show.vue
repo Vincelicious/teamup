@@ -16,7 +16,7 @@
       <h3 class="text-white text-2xl mt-4 mb-2">{{ group.name }}</h3>
       <span class="text-white flex items-center">
         <BaseIcon class="mr-2" name="target" width="16" height="16" />
-        {{ group.goal }}
+        {{ group.marathonId }}
       </span>
 
       <div class="text-white flex items-center mt-8 mb-2">
@@ -36,11 +36,7 @@
         <h4>Members</h4>
       </div>
       <div class="mb-16 flex space-x-4">
-        <Member
-          v-for="member in group.members"
-          :key="member"
-          :member="member"
-        />
+        <Member v-for="member in group.members" :key="member" :member="member" />
       </div>
     </div>
   </div>
@@ -54,17 +50,17 @@ import Member from "@/components/groups/Member";
 export default {
   components: {
     TrainingDays,
-    Member
+    Member,
   },
   props: {
     group: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      selectedTrainingDays: ["tu", "sa"]
+      selectedTrainingDays: ["tu", "sa"],
     };
   },
   mounted() {
@@ -72,16 +68,15 @@ export default {
   },
   methods: {
     createMap() {
-      mapboxgl.accessToken =
-        "pk.eyJ1IjoidmluY2VsaWNpb3VzIiwiYSI6ImNrMjMxNnZrdTBwenkzaG9jMnd1NW5paXYifQ.bNaLnMChvRiZsZL4B2xSDQ";
+      mapboxgl.accessToken = "pk.eyJ1IjoidmluY2VsaWNpb3VzIiwiYSI6ImNrMjMxNnZrdTBwenkzaG9jMnd1NW5paXYifQ.bNaLnMChvRiZsZL4B2xSDQ";
 
       this.map = new mapboxgl.Map({
         container: "map",
         style: "mapbox://styles/mapbox/streets-v11",
-        center: [this.group.location.lng, this.group.location.lat],
-        zoom: 16
+        center: [this.group.trainingLocation.lng, this.group.trainingLocation.lat],
+        zoom: 16,
       });
-    }
-  }
+    },
+  },
 };
 </script>

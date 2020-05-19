@@ -5,8 +5,8 @@ const apiClient = axios.create({
   withCredentials: false, // This is the default
   headers: {
     Accept: "application/json",
-    "Content-Type": "application/json"
-  }
+    "Content-Type": "application/json",
+  },
 });
 
 export default {
@@ -15,7 +15,7 @@ export default {
   },
   getGroup(id) {
     return apiClient.get("/groups/" + id);
-  }
+  },
   createGroup(data) {
     return apiClient
       .post("/groups", data)
@@ -25,5 +25,5 @@ export default {
       .catch(function(error) {
         console.log(error);
       });
-  }
+  },
 };
