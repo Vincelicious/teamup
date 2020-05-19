@@ -6,8 +6,10 @@
 <script>
 import ProgressBar from "@/components/Motivation/ProgressBar.vue";
 
-export default {  components: {
+export default {
+  components: {
     ProgressBar
-  }};
+  }
+};
 </script>
 <style scoped></style>

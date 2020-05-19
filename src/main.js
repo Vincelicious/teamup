@@ -7,6 +7,7 @@ import "@/assets/css/tailwind.css";
 import VueGeolocation from "vue-browser-geolocation";
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
+import KProgress from "k-progress";
 
 Vue.config.productionTip = false;
 
@@ -43,6 +44,8 @@ requireComponent.keys().forEach(fileName => {
     componentConfig.default || componentConfig
   );
 });
+
+Vue.component("k-progress", KProgress);
 
 new Vue({
   router,
