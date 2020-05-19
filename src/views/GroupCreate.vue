@@ -20,14 +20,14 @@
       <p>Marathon target</p>
     </div>
 
-    <form class="target text-center">
+    <!-- <form class="target text-center">
       <input type="radio" id="quarter" value="quarter" v-model="group.goal" />
       <label for="quarter">Quarter</label>
       <input type="radio" id="half" value="half" v-model="group.goal" />
       <label for="half">Half</label>
       <input type="radio" id="full" value="full" v-model="group.goal" />
       <label for="full">Full</label>
-    </form>
+    </form> -->
 
     <div class="flex mb-4 mt-8">
       <calendar-icon class="card-icon" />
@@ -35,55 +35,20 @@
     </div>
 
     <form class="days text-center">
-      <input
-        type="checkbox"
-        id="monday"
-        value="monday"
-        v-model="group.trainingDays"
-      />
-      <label for="monday">Mo</label>
-      <input
-        type="checkbox"
-        id="tuesday"
-        value="tuesday"
-        v-model="group.trainingDays"
-      />
-      <label for="tuesday">Tu</label>
-      <input
-        type="checkbox"
-        id="wednesday"
-        value="wednesday"
-        v-model="group.trainingDays"
-      />
-      <label for="wednesday">We</label>
-      <input
-        type="checkbox"
-        id="thursday"
-        value="thursday"
-        v-model="group.trainingDays"
-      />
-      <label for="thursday">Th</label>
-      <input
-        type="checkbox"
-        id="friday"
-        value="friday"
-        v-model="group.trainingDays"
-      />
-      <label for="friday">Fr</label>
-      <input
-        type="checkbox"
-        id="saturday"
-        value="saturday"
-        v-model="group.trainingDays"
-      />
-      <label for="saturday">Sa</label>
-      <input
-        type="checkbox"
-        id="sunday"
-        value="sunday"
-        v-model="group.trainingDays"
-      />
-      <label for="sunday">Su</label>
+      <input type="checkbox" id="mo" value="mo" v-model="group.trainingDays" />
+      <label for="mo">Mo</label>
+      <input type="checkbox" id="tu" value="tu" v-model="group.trainingDays" />
+      <label for="tu">Tu</label>
+      <input type="checkbox" id="we" value="we" v-model="group.trainingDays" />
+      <label for="we">We</label>
+      <input type="checkbox" id="th" value="th" v-model="group.trainingDays" />
+      <label for="th">Th</label>
+      <input type="checkbox" id="fr" value="fr" v-model="group.trainingDays" />
+      <label for="fr">Fr</label>
+      <input type="checkbox" id="sa" value="sa" v-model="group.trainingDays" />
+      <label for="sa">Sa</label>
+      <input type="checkbox" id="su" value="su" v-model="group.trainingDays" />
+      <label for="su">Su</label>
     </form>
 
     <div class="flex mb-4 mt-8">
@@ -92,7 +57,13 @@
     </div>
 
     <div class="slider">
-      <vue-slider v-model="group.groupsize" :min="2" :max="10" :tooltip-placement="['bottom']" :tooltip="'always'" />
+      <vue-slider
+        v-model="group.maxMembers"
+        :min="2"
+        :max="10"
+        :tooltip-placement="['bottom']"
+        :tooltip="'always'"
+      />
     </div>
 
     <div id="button" class=" flex justify-between mb-4 mt-16">
@@ -134,11 +105,12 @@ export default {
     return {
       group: {
         name: "",
+        description: "De fanatiekste groep",
+        marathonId: 4,
         trainingDays: [],
-        goal: "",
-        groupsize: "",
-        location: {},
-        groupsize: 2
+        trainingLocation: {},
+        maxMembers: 5,
+        members: []
       }
     };
   },
@@ -146,10 +118,12 @@ export default {
     create: function() {
       GroupService.createGroup({
         name: this.group.name,
-        goal: this.group.goal,
+        description: this.group.description,
+        marathonId: this.group.marathonId,
         trainingDays: this.group.trainingDays,
-        maxSize: this.group.groupsize,
-        location: this.group.location
+        trainingLocation: this.group.trainingLocation,
+        maxMembers: this.group.maxMembers,
+        members: this.group.members
       })
         .then(response => {
           console.log(response.data);
@@ -161,7 +135,10 @@ export default {
   },
   created() {
     this.$getLocation().then(coordinates => {
-      this.group.location = { lat: coordinates.lat, lng: coordinates.lng };
+      this.group.trainingLocation = {
+        lat: coordinates.lat,
+        lng: coordinates.lng
+      };
     });
   }
 };
