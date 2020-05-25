@@ -1,7 +1,14 @@
 <template>
   <div class="app">
     <div class="container mx-auto px-4 py-8">
-      <k-progress :percent="60" active active-color="yellow" bg-color = "white" color="highlighted-color" :format="format" ></k-progress>
+      <k-progress
+        :percent="60"
+        active
+        active-color="yellow"
+        bg-color="white"
+        color="highlighted-color"
+        :format="format"
+      ></k-progress>
     </div>
   </div>
 </template>

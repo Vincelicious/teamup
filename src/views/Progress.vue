@@ -1,17 +1,26 @@
 <template>
   <div class="app">
-    <ProgressBar></ProgressBar>
-    <Modal></Modal>
+    <button class="btn text-white" @click="openModal">Open modal</button>
+    <Modal v-model="modalOpen"></Modal>
+    <h1>Test</h1>
   </div>
 </template>
 <script>
-import ProgressBar from "@/components/Motivation/ProgressBar.vue";
 import Modal from "@/components/Motivation/Modal.vue";
 
 export default {
   components: {
-    ProgressBar,
     Modal
+  },
+  data() {
+    return {
+      modalOpen: false
+    };
+  },
+  methods: {
+    openModal() {
+      this.modalOpen = !this.modalOpen;
+    }
   }
 };
 </script>
