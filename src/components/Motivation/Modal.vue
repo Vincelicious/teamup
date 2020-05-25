@@ -1,11 +1,17 @@
 <template>
-  <div class="modal" v-show="value">
-    <div class="container">
-      <p>This is a model</p>
-      <ProgressBar></ProgressBar>
-      <button @click.prevent="close" class="text-white">
-        Close
-      </button>
+  <div class="app flex justify-center">
+    <div class="modal w-11/12" v-show="value">
+      <div class="container flex flex-col ">
+        <button @click.prevent="close" class="text-white ">
+          X
+        </button>
+        <p class="text-center text-2xl py-2">Total Kilometers</p>
+        <p class="text-center text-lg py-2">3 Kilometers</p>
+        <p class="text-center text-sm text-opacity-50 py-2">
+          Your total numbers of kilometers ran
+        </p>
+        <ProgressBar></ProgressBar>
+      </div>
     </div>
   </div>
 </template>
@@ -34,5 +40,6 @@ export default {
 <style lang="css">
 .modal {
   background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
 }
 </style>

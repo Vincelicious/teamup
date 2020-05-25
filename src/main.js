@@ -8,6 +8,9 @@ import VueGeolocation from "vue-browser-geolocation";
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
 import KProgress from "k-progress";
+import VModal from 'vue-js-modal'
+
+
 
 Vue.config.productionTip = false;
 
@@ -54,3 +57,5 @@ new Vue({
 }).$mount("#app");
 
 Vue.use(VueGeolocation);
+
+Vue.use(VModal)

@@ -1,10 +1,11 @@
 <template>
   <div class="app">
-    <div class="container mx-auto px-4 py-8">
+    <div class="container px-4 py-2">
       <k-progress
+        class="flex justify-center"
         :percent="60"
         active
-        active-color="yellow"
+        active-color="white"
         bg-color="white"
         color="highlighted-color"
         :format="format"
@@ -17,11 +18,11 @@ export default {
   methods: {
     format(percent) {
       if (percent == 20) {
-        return "1/5";
+        return "1/5 km";
       } else if (percent == 40) {
-        return "2/5";
+        return "2/5 km";
       } else if (percent == 60) {
-        return "3/5";
+        return "3/5 km";
       }
     }
   }
