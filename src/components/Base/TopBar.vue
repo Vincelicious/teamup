@@ -7,8 +7,8 @@
 <script>
 export default {
   props: {
-    pageTitle: String
-  }
+    pageTitle: String,
+  },
 };
 </script>
 

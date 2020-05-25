@@ -4,7 +4,9 @@
     <div class="pt-16 mb-16">
       <GroupCard v-for="group in groups" :key="group.id" :group="group" />
     </div>
-    <div class="create-group-btn mr-3 mb-3 flex justify-center items-center"> <PlusIcon class="text-white"/></div>
+    <div class="create-group-btn mr-3 mb-3 flex justify-center items-center">
+      <PlusIcon class="text-white" />
+    </div>
   </div>
 </template>
 
@@ -26,9 +28,9 @@ export default {
     };
   },
   created() {
-     EventService.getGroups()
+    EventService.getGroups()
       .then(response => {
-        this.groups = response.data; // <--- set the events data
+        this.groups = response.data;
       })
       .catch(error => {
         console.log("There was an error:", error.response);
@@ -38,13 +40,13 @@ export default {
 </script>
 
 <style scoped>
-.create-group-btn{
+.create-group-btn {
   position: fixed;
   width: 52px;
   height: 52px;
   bottom: 56px;
   right: 0px;
-  background-color: theme('colors.highlighted-color');
+  background-color: theme("colors.highlighted-color");
   border-radius: 100%;
 }
 </style>
