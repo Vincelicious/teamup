@@ -12,6 +12,15 @@ export default {
       });
   },
   createUsers() {
+    // Clear old users
+    this.getUsers().then(response => {
+      response.forEach(user => {
+        db.collection("users")
+          .doc(user.id)
+          .delete();
+      });
+    });
+
     const users = [
       {
         email: "ned@stark.com",
