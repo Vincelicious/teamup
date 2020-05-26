@@ -26,5 +26,35 @@ export default {
   },
   createGroup(group) {
     return db.collection("groups").add(group);
+  },
+  createGroups() {
+    let groups = [
+      {
+        marathonId: "",
+        name: "House Stark",
+        description: "Winter is coming",
+        image: "",
+        trainingDays: ["tu", "fr"],
+        trainingLocation: "",
+        members: [],
+        maxMembers: 8,
+        achievements: []
+      },
+      {
+        marathonId: "",
+        name: "House Lannister",
+        description: "A Lannister always pays his debts",
+        image: "",
+        trainingDays: ["we", "sa"],
+        trainingLocation: "",
+        members: [],
+        maxMembers: 5,
+        achievements: []
+      }
+    ];
+
+    groups.forEach(group => {
+      db.collection("groups").add(group);
+    });
   }
 };
