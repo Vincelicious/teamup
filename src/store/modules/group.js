@@ -24,7 +24,7 @@ const actions = {
   fetchGroups({ commit }) {
     GroupService.getGroups()
       .then(response => {
-        commit("SET_GROUPS", response.data);
+        commit("SET_GROUPS", response);
       })
       .catch(error => {
         console.error(error);
@@ -33,8 +33,8 @@ const actions = {
   fetchGroup({ commit }, id) {
     return GroupService.getGroup(id)
       .then(response => {
-        commit("SET_GROUP", response.data);
-        return response.data;
+        commit("SET_GROUP", response);
+        return response;
       })
       .catch(error => {
         console.error(error);

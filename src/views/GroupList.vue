@@ -4,15 +4,17 @@
     <div class="pt-16 mb-16">
       <GroupCard v-for="group in groups" :key="group.id" :group="group" />
     </div>
-    <div class="create-group-btn mr-3 mb-3 flex justify-center items-center"> <PlusIcon class="text-white"/></div>
+    <div class="create-group-btn mr-3 mb-3 flex justify-center items-center">
+      <PlusIcon class="text-white" />
+    </div>
   </div>
 </template>
 
 <script>
 import GroupCard from "@/components/GroupList/GroupCard.vue";
 import GroupListTopBar from "@/components/Base/GroupListTopBar.vue";
-import EventService from "@/services/EventService.js";
 import { PlusIcon } from "vue-feather-icons";
+import { mapState } from "vuex";
 
 export default {
   components: {
@@ -20,31 +22,23 @@ export default {
     GroupListTopBar,
     PlusIcon
   },
-  data() {
-    return {
-      groups: []
-    };
-  },
   created() {
-     EventService.getGroups()
-      .then(response => {
-        this.groups = response.data; // <--- set the events data
-      })
-      .catch(error => {
-        console.log("There was an error:", error.response);
-      });
+    this.$store.dispatch("group/fetchGroups");
+  },
+  computed: {
+    ...mapState("group", ["groups"])
   }
 };
 </script>
 
 <style scoped>
-.create-group-btn{
+.create-group-btn {
   position: fixed;
   width: 52px;
   height: 52px;
   bottom: 56px;
   right: 0px;
-  background-color: theme('colors.highlighted-color');
+  background-color: theme("colors.highlighted-color");
   border-radius: 100%;
 }
 </style>
