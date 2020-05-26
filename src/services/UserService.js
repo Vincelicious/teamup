@@ -1,16 +1,14 @@
-import axios from "axios";
-
-const apiClient = axios.create({
-  baseURL: `http://localhost:3000`,
-  withCredentials: false,
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json"
-  }
-});
+import { db } from "../db";
 
 export default {
   getUsers() {
-    return apiClient.get("/users");
+    return db
+      .collection("users")
+      .get()
+      .then(querySnapshot => {
+        return querySnapshot.docs.map(doc => {
+          return { ...{ id: doc.id }, ...doc.data() };
+        });
+      });
   }
 };
