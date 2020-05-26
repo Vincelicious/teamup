@@ -1,29 +1,30 @@
-import axios from "axios";
-
-const apiClient = axios.create({
-  baseURL: `http://86.95.88.160:3000`,
-  withCredentials: false, // This is the default
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json"
-  }
-});
+import { db } from "../db";
 
 export default {
   getGroups() {
-    return apiClient.get("/groups");
+    return db
+      .collection("groups")
+      .get()
+      .then(querySnapshot => {
+        return querySnapshot.docs.map(doc => {
+          return { ...{ id: doc.id }, ...doc.data() };
+        });
+      });
   },
   getGroup(id) {
-    return apiClient.get("/groups/" + id);
-  },
-  createGroup(data) {
-    return apiClient
-      .post("/groups", data)
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.log(error);
+    return db
+      .collection("groups")
+      .doc(id)
+      .get()
+      .then(doc => {
+        if (doc.exists) {
+          return { ...{ id: doc.id }, ...doc.data() };
+        } else {
+          console.error("This group doesn't exist");
+        }
       });
+  },
+  createGroup(group) {
+    return db.collection("groups").add(group);
   }
 };
