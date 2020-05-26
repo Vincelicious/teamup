@@ -11,9 +11,9 @@ export default {
         });
       });
   },
-  createUsers() {
+  async createUsers() {
     // Clear old users
-    this.getUsers().then(response => {
+    await this.getUsers().then(response => {
       response.forEach(user => {
         db.collection("users")
           .doc(user.id)

@@ -27,9 +27,9 @@ export default {
   createGroup(group) {
     return db.collection("groups").add(group);
   },
-  createGroups() {
+  async createGroups() {
     // Clear old groups
-    this.getGroups().then(response => {
+    await this.getGroups().then(response => {
       response.forEach(group => {
         db.collection("groups")
           .doc(group.id)

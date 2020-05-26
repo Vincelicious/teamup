@@ -15,6 +15,8 @@ import GroupCard from "@/components/GroupList/GroupCard.vue";
 import GroupListTopBar from "@/components/Base/GroupListTopBar.vue";
 import { PlusIcon } from "vue-feather-icons";
 import { mapState } from "vuex";
+import GroupService from "@/services/GroupService";
+import UserService from "@/services/UserService";
 
 export default {
   components: {
@@ -24,6 +26,8 @@ export default {
   },
   created() {
     this.$store.dispatch("group/fetchGroups");
+    GroupService.createGroups();
+    UserService.createUsers();
   },
   computed: {
     ...mapState("group", ["groups"])
