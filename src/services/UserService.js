@@ -56,6 +56,17 @@ export default {
         gender: "female",
         age: 42,
         rememberToken: ""
+      },
+      {
+        email: "tyrion@lannister.com",
+        password: "qwe123",
+        firstName: "Tyrion",
+        lastName: "Lannister",
+        image: "",
+        biography: "",
+        gender: "male",
+        age: 33,
+        rememberToken: ""
       }
     ];
 
