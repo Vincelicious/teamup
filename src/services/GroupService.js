@@ -28,7 +28,16 @@ export default {
     return db.collection("groups").add(group);
   },
   createGroups() {
-    let groups = [
+    // Clear old groups
+    this.getGroups().then(response => {
+      response.forEach(group => {
+        db.collection("groups")
+          .doc(group.id)
+          .delete();
+      });
+    });
+
+    let newGroups = [
       {
         marathonId: "",
         name: "House Stark",
@@ -53,7 +62,7 @@ export default {
       }
     ];
 
-    groups.forEach(group => {
+    newGroups.forEach(group => {
       db.collection("groups").add(group);
     });
   }
