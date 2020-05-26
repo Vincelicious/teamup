@@ -6,7 +6,7 @@
           X
         </button>
         <p class="text-center text-2xl py-2">Total Kilometers</p>
-        <!-- <div id="total-kilometers-badge"></div> -->
+        <LottiePoc></LottiePoc>
         <p class="text-center text-lg py-2">3 Kilometers</p>
         <p class="text-center text-sm text-opacity-50 py-2">
           Your total numbers of kilometers ran
@@ -19,13 +19,14 @@
 
 <script>
 import ProgressBar from "@/components/Motivation/ProgressBar.vue";
-
+import LottiePoc from "@/components/Motivation/LottiePoc.vue";
 
 export default {
   components: {
-    ProgressBar
+    ProgressBar,
+    LottiePoc
   },
-  name: "Modal",
+  name: "app",
   props: {
     value: {
       required: true
@@ -34,31 +35,14 @@ export default {
   methods: {
     close() {
       this.$emit("input", !this.value);
-    },
-    animation() {}
+    }
   }
-  // mounted() {
-  //   let externalScript = document.createElement("script");
-  //   externalScript.setAttribute(
-  //     "src",
-  //     "C:/xampp/htdocs/ict/semester4/teamup/src/assets/badges/lottie.js"
-  //   );
-  //   document.head.appendChild(externalScript);
-  // }
 };
-
-// var totalKilometersBadge = bodymovin.loadAnimation({
-//   container: document.getElementById("total-kilometers-badge"),
-//   renderer: "svg",
-//   loop: true,
-//   autoplay: true,
-//   path: "../../assets/badges/total-kilometers-badge.json"
-// });
 </script>
 
 <style lang="css">
 .modal {
-  background-color: theme("colors.darkened-color");
+  background-color: theme("colors.primary-color");
   position: absolute;
 }
 </style>

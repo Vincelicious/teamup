@@ -2,32 +2,18 @@
   <div id="app">
     <lottie
       :options="defaultOptions"
-      :height="400"
-      :width="400"
+      :height="200"
+      :width="200"
       v-on:animCreated="handleAnimation"
     />
-    <div>
-      <p>Speed: x{{ animationSpeed }}</p>
-      <input
-        type="range"
-        value="1"
-        min="0"
-        max="3"
-        step="0.5"
-        v-on:change="onSpeedChange"
-        v-model="animationSpeed"
-      />
-    </div>
-    <button v-on:click="stop">stop</button>
-    <button v-on:click="pause">pause</button>
-    <button v-on:click="play">play</button>
+    <!-- <button v-on:click="stop">stop</button>
+    <button v-on:click="pause">pause</button> -->
   </div>
 </template>
 
 <script>
-import Lottie from 'vue-lottie';
-import * as animationData from "../../assets/badges/total-kilometers-badge.json";
-
+import Lottie from "vue-lottie";
+import animationData from "@/assets/badges/total-kilometers-badge.json";
 
 export default {
   name: "app",
@@ -36,7 +22,11 @@ export default {
   },
   data() {
     return {
-      defaultOptions: { animationData: animationData },
+      defaultOptions: {
+        animationData: animationData,
+        loop: false,
+        autoplay: false
+      },
       animationSpeed: 1
     };
   },
@@ -55,10 +45,6 @@ export default {
 
     pause: function() {
       this.anim.pause();
-    },
-
-    onSpeedChange: function() {
-      this.anim.setSpeed(this.animationSpeed);
     }
   }
 };
