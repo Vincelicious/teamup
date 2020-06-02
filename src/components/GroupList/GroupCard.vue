@@ -36,7 +36,7 @@
         </div>
         <div class="flex">
           <TargetIcon class="card-icon icon-color"></TargetIcon>
-          <p>{{ group.goal }}</p>
+          <p>{{ marathon.name }}</p>
         </div>
       </div>
     </div>
@@ -50,11 +50,18 @@ import {
   UsersIcon,
   ChevronRightIcon
 } from "vue-feather-icons";
+import { mapGetters } from "vuex";
 
 export default {
   components: { MapPinIcon, TargetIcon, UsersIcon, ChevronRightIcon },
   props: {
     group: Object
+  },
+  computed: {
+    marathon() {
+      return this.getMarathonById(this.group.marathonId);
+    },
+    ...mapGetters("marathon", ["getMarathonById"])
   }
 };
 </script>

@@ -23,6 +23,7 @@ export default {
     PlusIcon
   },
   created() {
+    this.$store.dispatch("marathon/fetchMarathons");
     this.$store.dispatch("group/fetchGroups");
   },
   computed: {

@@ -5,6 +5,7 @@ import { vuexfireMutations } from "vuexfire";
 
 import group from "@/store/modules/group";
 import user from "@/store/modules/user";
+import marathon from "@/store/modules/marathon";
 
 Vue.use(Vuex);
 
@@ -16,6 +17,7 @@ export default new Vuex.Store({
   actions: {},
   modules: {
     group,
-    user
+    user,
+    marathon
   }
 });
