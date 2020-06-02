@@ -11,6 +11,10 @@
         <ChevronRightIcon class="icon-color" />
       </div>
       <div class="flex">
+        <TargetIcon class="card-icon icon-color"></TargetIcon>
+        <p>{{ marathon.name }}</p>
+      </div>
+      <div class="flex">
         <div
           class="card-training-days mr-2 "
           v-for="(available, day) in group.trainingdays"
@@ -24,19 +28,15 @@
 
       <!-- Group Info -->
       <div class="group-info flex h-full items-end">
-        <div class="flex mr-5">
+        <div class="flex mr-8">
           <UsersIcon class="card-icon icon-color"></UsersIcon>
           <p class="min-w-8">
             {{ group.members.length }} / {{ group.maxMembers }}
           </p>
         </div>
-        <div class="flex mr-5">
+        <div class="flex mr-8">
           <MapPinIcon class="card-icon icon-color"></MapPinIcon>
           <p>10 km</p>
-        </div>
-        <div class="flex">
-          <TargetIcon class="card-icon icon-color"></TargetIcon>
-          <p>{{ marathon.name }}</p>
         </div>
       </div>
     </div>
