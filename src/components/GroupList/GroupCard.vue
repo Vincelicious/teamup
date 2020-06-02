@@ -11,19 +11,13 @@
           <h2 class="text-xl font-bold mb-2">{{ group.name }}</h2>
           <ChevronRightIcon class="icon-color" />
         </div>
-        <div class="flex">
-          <TargetIcon class="card-icon icon-color"></TargetIcon>
-          <p>{{ marathon.name }}</p>
-        </div>
-        <div class="flex">
+        <div class="flex mt-2">
           <div
-            class="card-training-days mr-2 "
-            v-for="(available, day) in group.trainingdays"
+            class="card-training-days mr-2"
+            v-for="day in group.trainingDays"
             :key="day"
-            :group="group"
-            v-show="available"
           >
-            {{ day }}
+            {{ day.toUpperCase() }}
           </div>
         </div>
 
@@ -38,6 +32,10 @@
           <div class="flex mr-8">
             <MapPinIcon class="card-icon icon-color"></MapPinIcon>
             <p>10 km</p>
+          </div>
+          <div class="flex">
+            <TargetIcon class="card-icon icon-color"></TargetIcon>
+            <p>{{ marathon.name }}</p>
           </div>
         </div>
       </div>
