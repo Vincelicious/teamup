@@ -6,7 +6,12 @@
           X
         </button>
         <p class="text-center text-2xl py-2">Total Kilometers</p>
-        <LottiePoc></LottiePoc>
+        <lottie
+          :options="defaultOptions"
+          :height="200"
+          :width="200"
+          v-on:animCreated="handleAnimation"
+        />
         <p class="text-center text-lg py-2">3 Kilometers</p>
         <p class="text-center text-sm text-opacity-50 py-2">
           Your total numbers of kilometers ran
@@ -19,12 +24,13 @@
 
 <script>
 import ProgressBar from "@/components/Motivation/ProgressBar.vue";
-import LottiePoc from "@/components/Motivation/LottiePoc.vue";
+import Lottie from "vue-lottie";
+import animationData from "@/assets/badges/total-kilometers-badge.json";
 
 export default {
   components: {
     ProgressBar,
-    LottiePoc
+    lottie: Lottie
   },
   name: "app",
   props: {
@@ -35,7 +41,23 @@ export default {
   methods: {
     close() {
       this.$emit("input", !this.value);
+    },
+    handleAnimation: function(anim) {
+      this.anim = anim;
+    },
+    play: function() {
+      this.anim.play();
     }
+  },
+  data() {
+    return {
+      defaultOptions: {
+        animationData: animationData,
+        loop: false,
+        autoplay: false
+      },
+      animationSpeed: 1
+    };
   }
 };
 </script>

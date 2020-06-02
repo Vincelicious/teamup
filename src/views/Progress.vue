@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <button class="btn text-white" @click="openModal">Open modal</button>
-    <Modal v-model="modalOpen"></Modal>
+    <Modal v-model="modalOpen" ref="loadAnimation"></Modal>
     <h1>Test</h1>
   </div>
 </template>
@@ -20,6 +20,7 @@ export default {
   methods: {
     openModal() {
       this.modalOpen = !this.modalOpen;
+      this.$refs.loadAnimation.play();
     }
   }
 };

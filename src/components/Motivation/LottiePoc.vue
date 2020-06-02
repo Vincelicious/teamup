@@ -6,8 +6,7 @@
       :width="200"
       v-on:animCreated="handleAnimation"
     />
-    <!-- <button v-on:click="stop">stop</button>
-    <button v-on:click="pause">pause</button> -->
+    <button v-on:click="play">play</button>
   </div>
 </template>
 
