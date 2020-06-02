@@ -16,14 +16,14 @@
       <h3 class="text-white text-2xl mt-4 mb-2">{{ group.name }}</h3>
       <span class="text-white flex items-center">
         <BaseIcon class="mr-2" name="target" width="16" height="16" />
-        {{ group.goal }}
+        {{ marathon.name }}
       </span>
 
       <div class="text-white flex items-center mt-8 mb-2">
         <BaseIcon class="mr-2" name="calendar" width="16" height="16" />
         <h4>Training Days</h4>
       </div>
-      <TrainingDays :trainingDays="selectedTrainingDays" />
+      <TrainingDays :trainingDays="group.trainingDays" />
 
       <div class="text-white flex items-center mt-8 mb-2">
         <BaseIcon class="mr-2" name="map-pin" width="16" height="16" />
@@ -50,6 +50,7 @@
 import TrainingDays from "@/components/groups/TrainingDays";
 import mapboxgl from "mapbox-gl";
 import Member from "@/components/groups/Member";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
@@ -62,13 +63,14 @@ export default {
       required: true
     }
   },
-  data() {
-    return {
-      selectedTrainingDays: ["tu", "sa"]
-    };
-  },
   mounted() {
     this.createMap();
+  },
+  computed: {
+    marathon() {
+      return this.getMarathonById(this.group.marathonId);
+    },
+    ...mapGetters("marathon", ["getMarathonById"])
   },
   methods: {
     createMap() {
