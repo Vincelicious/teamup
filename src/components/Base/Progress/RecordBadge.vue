@@ -3,14 +3,13 @@
     <div class="container mx-auto px-4">
       <div class="text-white flex flex-col items-center">
         <div class="badge-icon flex justify-center items-center">
-          <img :src="'/assets/badges/' + recordBadges.image" />
+          <img :src="require(`@/assets/badges/${recordBadges.image}`)" />
           <!-- <img key="@/assets/badges/wireframebadge2.svg" /> -->
         </div>
         <div class="badge-info flex flex-col justify-center mb-3 ml-3">
           <div>
             <h1 class="font-bold mt-3">{{ recordBadges.name }}</h1>
             <p class="underline-text text-center">
-              {{ recordBadges.description }}
               {{ recordBadges.description }}
             </p>
           </div>
