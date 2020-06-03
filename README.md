@@ -1,6 +1,16 @@
 # Teamup
 
-This repository contains the code for the Teamup platform.
+This repository contains the code for the Teamup platform. The progress bar branch contains the code for the modal badge functionality.
+
+The modal badge functionality contains the following elements:
+
+  - Badge information (title, statistics)
+  - Lottiefile animation made with Adobe After effects 
+  - Progress bar
+
+### Demo
+
+https://youtu.be/wGwfBQPoHkU
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your development enviroment.
