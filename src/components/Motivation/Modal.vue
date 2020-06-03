@@ -12,7 +12,7 @@
           :width="200"
           v-on:animCreated="handleAnimation"
         />
-        <p class="text-center text-lg py-2">3 Kilometers</p>
+        <p class="text-center text-lg py-2">3/5 Kilometers</p>
         <p class="text-center text-sm text-opacity-50 py-2">
           Your total numbers of kilometers ran
         </p>

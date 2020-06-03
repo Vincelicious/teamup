@@ -28,4 +28,8 @@ export default {
   }
 };
 </script>
-<style scoped></style>
+<style>
+.k-progress-text {
+  color: #ffffff;
+}
+</style>
