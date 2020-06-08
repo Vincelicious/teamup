@@ -22,7 +22,8 @@
 import TopBar from "@/components/Base/TopBar.vue";
 import Badge from "@/components/Base/Progress/Badge.vue";
 import RecordBadge from "@/components/Base/Progress/RecordBadge.vue";
-import BadgeService from "@/services/BadgeService.js";
+// import BadgeService from "@/services/BadgeService.js";
+import { mapState } from "vuex";
 
 export default {
   components: {
@@ -30,20 +31,11 @@ export default {
     Badge,
     RecordBadge
   },
-  data() {
-    return {
-      recordBadges: []
-    };
-  },
   created() {
-    BadgeService.getRecordBadges()
-      .then(response => {
-        this.recordBadges = response.data;
-        console.log(this.recordBadges);
-      })
-      .catch(error => {
-        console.log("There was an error:", error.response);
-      });
+    this.$store.dispatch("badge/fetchBadges");
+  },
+  computed: {
+    ...mapState("badge", ["recordBadges"])
   }
 };
 </script>

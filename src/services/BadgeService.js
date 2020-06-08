@@ -1,19 +1,16 @@
-import axios from "axios";
-
-const apiClient = axios.create({
-  baseURL: `http://86.95.88.160:3000`,
-  withCredentials: false, // This is the default
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json"
-  }
-});
+import { db } from "../db";
 
 export default {
   getRecordBadges() {
-    return apiClient.get("/achievements?achievementType=record");
-  },
-  getProgressBadges() {
-    return apiClient.get("/achievements?achievementType=progress");
+    return db
+      .collection("achievements")
+      .where("achievementType", "==", "record")
+      .get()
+      .then(querySnapshot => {
+        return querySnapshot.docs.map(doc => {
+          console.log(doc.data());
+          return { ...{ id: doc.id }, ...doc.data() };
+        });
+      });
   }
 };
