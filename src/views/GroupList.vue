@@ -13,8 +13,8 @@
 <script>
 import GroupCard from "@/components/GroupList/GroupCard.vue";
 import GroupListTopBar from "@/components/Base/GroupListTopBar.vue";
-import EventService from "@/services/EventService.js";
 import { PlusIcon } from "vue-feather-icons";
+import { mapState } from "vuex";
 
 export default {
   components: {
@@ -22,19 +22,12 @@ export default {
     GroupListTopBar,
     PlusIcon
   },
-  data() {
-    return {
-      groups: []
-    };
-  },
   created() {
-    EventService.getGroups()
-      .then(response => {
-        this.groups = response.data;
-      })
-      .catch(error => {
-        console.log("There was an error:", error.response);
-      });
+    this.$store.dispatch("marathon/fetchMarathons");
+    this.$store.dispatch("group/fetchGroups");
+  },
+  computed: {
+    ...mapState("group", ["groups"])
   }
 };
 </script>
