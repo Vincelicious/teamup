@@ -80,7 +80,10 @@ export default {
       this.map = new mapboxgl.Map({
         container: "map",
         style: "mapbox://styles/mapbox/streets-v11",
-        center: [this.group.location.lng, this.group.location.lat],
+        center: [
+          this.group.trainingLocation.latitude,
+          this.group.trainingLocation.longitude
+        ],
         zoom: 16
       });
     }
