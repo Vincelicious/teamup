@@ -52,6 +52,7 @@ import {
 } from "vue-feather-icons";
 import { mapGetters } from "vuex";
 
+
 export default {
   components: { MapPinIcon, TargetIcon, UsersIcon, ChevronRightIcon },
   props: {
