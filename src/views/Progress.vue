@@ -4,7 +4,7 @@
     <!-- Wat is de beste manier om de content naar beneden te pushen? Dit hieronder kan veranderd worden -->
     <div class="spacing py-8"></div>
 
-    <div class="recordbadges flex">
+    <div class="recordbadges flex justify-center mb-3">
       <RecordBadge
         v-for="recordBadge in recordBadges"
         :key="recordBadge.id"
