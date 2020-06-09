@@ -7,6 +7,10 @@ import "@/assets/css/tailwind.css";
 import VueGeolocation from "vue-browser-geolocation";
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
+import KProgress from "k-progress";
+import VModal from 'vue-js-modal'
+
+
 
 Vue.config.productionTip = false;
 
@@ -44,6 +48,8 @@ requireComponent.keys().forEach(fileName => {
   );
 });
 
+Vue.component("k-progress", KProgress);
+
 new Vue({
   router,
   store,
@@ -51,3 +57,5 @@ new Vue({
 }).$mount("#app");
 
 Vue.use(VueGeolocation);
+
+Vue.use(VModal)
