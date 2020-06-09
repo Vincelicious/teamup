@@ -4,7 +4,6 @@
       <div class="text-white flex flex-col items-center">
         <div class="badge-icon flex justify-center items-center">
           <img :src="require(`@/assets/badges/${recordBadges.image}`)" />
-          <!-- <img key="@/assets/badges/wireframebadge2.svg" /> -->
         </div>
         <div class="badge-info flex flex-col justify-center mb-3 ml-3">
           <div>
@@ -13,7 +12,6 @@
               {{ recordBadges.description }}
             </p>
           </div>
-          <!-- Progress Bar -->
         </div>
       </div>
     </div>
