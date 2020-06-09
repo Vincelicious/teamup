@@ -6,9 +6,9 @@
 
     <div class="recordbadges flex justify-center mb-3">
       <RecordBadge
-        v-for="recordBadge in recordBadges"
-        :key="recordBadge.id"
-        :recordBadges="recordBadge"
+        v-for="badge in recordBadges"
+        :key="badge.id"
+        :recordBadges="badge"
       ></RecordBadge>
     </div>
 
@@ -22,7 +22,8 @@
 import TopBar from "@/components/Base/TopBar.vue";
 import Badge from "@/components/Base/Progress/Badge.vue";
 import RecordBadge from "@/components/Base/Progress/RecordBadge.vue";
-import BadgeService from "@/services/BadgeService.js";
+// import BadgeService from "@/services/BadgeService.js";
+import { mapState } from "vuex";
 
 export default {
   components: {
@@ -30,20 +31,16 @@ export default {
     Badge,
     RecordBadge
   },
-  data() {
-    return {
-      recordBadges: []
-    };
-  },
   created() {
-    BadgeService.getRecordBadges()
-      .then(response => {
-        this.recordBadges = response.data;
-        console.log(this.recordBadges);
-      })
-      .catch(error => {
-        console.log("There was an error:", error.response);
+    this.$store.dispatch("badge/fetchBadges");
+  },
+  computed: {
+    ...mapState("badge", ["badges"]),
+    recordBadges: function() {
+      return this.badges.filter(badge => {
+        return badge.achievementType == "record";
       });
+    }
   }
 };
 </script>
