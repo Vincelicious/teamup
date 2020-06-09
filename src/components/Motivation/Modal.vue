@@ -3,16 +3,16 @@
     <div class="modal w-11/12" >
       <div class="container flex flex-col">
        
-        <p class="text-center text-2xl pt-2 pb-6 font-bold ">Fastest Kilometer</p>
+        <p class="text-center text-2xl pt-2 pb-6 font-bold ">{{title}}</p>
         <lottie
           :options="defaultOptions"
           :height="200"
           :width="200"
           v-on:animCreated="handleAnimation"
         />
-        <p class="text-center text-2xl py-2 font-bold">00 : 05 : 43</p>
+        <p class="text-center text-2xl py-2 font-bold">{{data}}</p>
         <p class="text-center text-lg text-white opacity-50 py-2">
-          Your fastest kilometer.
+          {{subtitle}}
         </p>
         <!-- <ProgressBar></ProgressBar> -->
          <button @click.prevent="close" class="text-white button">
@@ -26,7 +26,10 @@
 <script>
 // import ProgressBar from "@/components/Motivation/ProgressBar.vue";
 import Lottie from "vue-lottie";
-import animationData from "@/assets/badges/total-kilometers-badge.json";
+import animationData from "@/assets/badges/fastest-kilometers-badge.json";
+// import animationData from "@/assets/badges/target-badge.json";
+// import animationData from "@/assets/badges/longest-run-badge.json";
+
 
 export default {
   components: {
@@ -35,6 +38,9 @@ export default {
   },
   name: "app",
   props: {
+    title: String,
+    subtitle: String,
+    data: String,
     value: {
       required: true
     }
