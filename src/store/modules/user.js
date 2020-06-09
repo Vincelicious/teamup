@@ -20,7 +20,7 @@ const actions = {
   fetchUsers({ commit }) {
     UserService.getUsers()
       .then(response => {
-        commit("SET_USERS", response.data);
+        commit("SET_USERS", response);
       })
       .catch(error => {
         console.error(error);
