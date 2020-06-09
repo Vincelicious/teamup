@@ -6,9 +6,9 @@
 
     <div class="recordbadges flex justify-center mb-3">
       <RecordBadge
-        v-for="recordBadge in recordBadges"
-        :key="recordBadge.id"
-        :recordBadges="recordBadge"
+        v-for="badge in recordBadges"
+        :key="badge.id"
+        :recordBadges="badge"
       ></RecordBadge>
     </div>
 
@@ -35,7 +35,12 @@ export default {
     this.$store.dispatch("badge/fetchBadges");
   },
   computed: {
-    ...mapState("badge", ["recordBadges"])
+    ...mapState("badge", ["badges"]),
+    recordBadges: function() {
+      return this.badges.filter(badge => {
+        return badge.achievementType == "record";
+      });
+    }
   }
 };
 </script>

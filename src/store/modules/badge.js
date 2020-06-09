@@ -18,7 +18,7 @@ const mutations = {
 
 const actions = {
   fetchBadges({ commit }) {
-    BadgeService.getRecordBadges()
+    BadgeService.getBadges()
       .then(response => {
         commit("SET_BADGES", response);
       })

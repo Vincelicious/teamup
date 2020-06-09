@@ -1,10 +1,9 @@
 import { db } from "../db";
 
 export default {
-  getRecordBadges() {
+  getBadges() {
     return db
       .collection("achievements")
-      .where("achievementType", "==", "record")
       .get()
       .then(querySnapshot => {
         return querySnapshot.docs.map(doc => {
