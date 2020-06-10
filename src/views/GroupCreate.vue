@@ -103,12 +103,13 @@
       />
     </div>
 
-    <div id="button" class=" flex justify-between mb-4 mt-16">
-      <button
+    <div id="button" class=" flex justify-between mb-4 mt-24">
+      <router-link
+        :to="{ name: 'Group List' }"
         class=" flex justify-center border border-highlighted-color  py-2 px-4 rounded-lg w-5/12"
       >
         Cancel
-      </button>
+      </router-link>
       <button
         class=" flex justify-center bg-highlighted-color py-2 px-4 rounded-lg w-5/12"
         v-on:click="create"
