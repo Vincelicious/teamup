@@ -398,9 +398,9 @@ export default {
 }
 
 .days label {
-  width: 42px;
-  height: 42px;
-  padding: 9px 0px;
+  width: 48px;
+  height: 48px;
+  padding: 12px 0px;
   background-color: theme("colors.darkened-color");
   transition: all 0.3s;
   color: #fff;
