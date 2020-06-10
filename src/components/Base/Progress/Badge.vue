@@ -14,8 +14,8 @@
           </div>
           <!-- Progress Bar -->
           <div class="flex items-center">
-            <div class="progressbar mr-3 mt-3"></div>
-            <div class="statistics text-white mt-2">10/200</div>
+            <ProgressBar></ProgressBar>
+            <!-- <div class="statistics text-white mt-2">10/200</div> -->
           </div>
         </div>
       </div>
@@ -24,7 +24,13 @@
 </template>
 
 <script>
-export default {};
+import ProgressBar from "@/components/Motivation/ProgressBar.vue";
+
+export default {
+  components: {
+    ProgressBar
+  }
+};
 </script>
 
 <style scoped>

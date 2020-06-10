@@ -1,8 +1,8 @@
 <template>
   <div class="app">
-    <div class="container px-4 py-2">
+    <div class="wrapper py-2 ">
       <k-progress
-        class="flex justify-center"
+        class="flex justify-between"
         :percent="60"
         active
         active-color="white"
@@ -31,5 +31,17 @@ export default {
 <style>
 .k-progress-text {
   color: #ffffff;
+  /* margin-left: 25px; */
+  /* width:  */
+}
+.k-progress {
+  /* width: 238px; */
+  width: 420%;
+  /* margin-right: 0; */
+}
+@media screen and (max-width: 400px) {
+  .k-progress {
+    width: 390%;
+  }
 }
 </style>

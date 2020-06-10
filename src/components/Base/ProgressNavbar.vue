@@ -1,9 +1,11 @@
 <template>
   <div>
-    <div
-      class="flex justify-between items-center bg-primary-color h-14 fixed w-screen "
-    >
-      <h1 class="text-white text-xl font-bold">{{ pageTitle }}</h1>
+    <div class="bg-darkened-color flex justify-evenly text-white mb-10">
+      <div class="py-4 flex-1 text-center border-b-4 border-highlighted-color">
+        Badge
+      </div>
+      <div class="py-4 flex-1 text-center">Statistics</div>
+      <div class="py-4 flex-1 text-center">History</div>
     </div>
   </div>
 </template>

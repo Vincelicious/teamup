@@ -1,8 +1,9 @@
 <template>
   <div class="app">
-    <TopBar pageTitle="Progress"></TopBar>
-    <!-- Wat is de beste manier om de content naar beneden te pushen? Dit hieronder kan veranderd worden -->
-    <div class="spacing py-8"></div>
+    <ProgressTopBar pageTitle="Progress"></ProgressTopBar>
+    <!-- <div class="spacing py-8"></div> -->
+    <ProgressNavBar></ProgressNavBar>
+
     <div class="container clickable">
       <div class="recordbadges flex flex-start mb-3">
         <div class="badge1" @click="openLongestRun">
@@ -62,6 +63,8 @@
     <Badge></Badge>
     <Badge></Badge>
     <Badge></Badge>
+    <!-- Temporary filler for the bottom -->
+    <div class="h-20"></div>
 
     <ModalFastestKm
       v-model="ModalFastestKm"
@@ -78,14 +81,17 @@
 import ModalTarget from "@/components/Motivation/ModalTarget.vue";
 import ModalFastestKm from "@/components/Motivation/ModalFastestKm.vue";
 import ModalLongestRun from "@/components/Motivation/ModalLongestRun.vue";
-import TopBar from "@/components/Base/TopBar.vue";
+
+import ProgressTopBar from "@/components/Base/ProgressTopBar.vue";
+import ProgressNavBar from "@/components/Base/ProgressNavBar.vue";
 import Badge from "@/components/Base/Progress/Badge.vue";
 // import RecordBadge from "@/components/Base/Progress/RecordBadge.vue";
 import { mapState } from "vuex";
 
 export default {
   components: {
-    TopBar,
+    ProgressTopBar,
+    ProgressNavBar,
     Badge,
     // RecordBadge,
     ModalTarget,
