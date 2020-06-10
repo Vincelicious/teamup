@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-bar">
+  <div class="nav-bar" v-show="$route.path != '/'">
     <div class="menu-item">
       <router-link class="menu-item" :to="{ name: 'Group List' }">
         <PauseIcon class="flip"></PauseIcon>Grouplist
