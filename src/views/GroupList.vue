@@ -4,9 +4,12 @@
     <div class="pt-16 mb-16">
       <GroupCard v-for="group in groups" :key="group.id" :group="group" />
     </div>
-    <div class="create-group-btn mr-3 mb-3 flex justify-center items-center">
+    <router-link
+      :to="{ name: 'Group Create' }"
+      class="create-group-btn mr-3 mb-3 flex justify-center items-center"
+    >
       <PlusIcon class="text-white" />
-    </div>
+    </router-link>
   </div>
 </template>
 
