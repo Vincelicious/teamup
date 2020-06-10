@@ -1,7 +1,9 @@
 <script src="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/dist/vue-slider-component.umd.min.js"></script>
 
 <template>
-  <div class="flex flex-col content-center h-screen m-3  text-white ">
+  <div
+    class="container mx-auto px-4 flex flex-col content-center h-screen m-3  text-white "
+  >
     <div class="flex mb-4 mt-8">
       <zap-icon class="card-icon" />
       <p>Groupname</p>
@@ -92,7 +94,13 @@
     </div>
 
     <div class="slider">
-      <vue-slider v-model="group.groupsize" :min="2" :max="10" :tooltip-placement="['bottom']" :tooltip="'always'" />
+      <vue-slider
+        v-model="group.groupsize"
+        :min="2"
+        :max="10"
+        :tooltip-placement="['bottom']"
+        :tooltip="'always'"
+      />
     </div>
 
     <div id="button" class=" flex justify-between mb-4 mt-16">
