@@ -60,9 +60,25 @@
       </div>
     </div>
 
-    <Badge></Badge>
-    <Badge></Badge>
-    <Badge></Badge>
+    <Badge
+      image="TotalTrainingtimeBadge.svg"
+      title="Total Training Time"
+      desc="Your total time trained."
+      progress="60"
+    ></Badge>
+    <Badge
+      image="TotalTrainingsBadge.svg"
+      title="Total Trainings"
+      desc="Your total number of trainings."
+      progress="20"
+    ></Badge>
+    <Badge
+      image="TotalKilometersBadge.svg"
+      title="Total Kilometers"
+      desc="Your total number of kilometers ran."
+      progress="80"
+    ></Badge>
+
     <!-- Temporary filler for the bottom -->
     <div class="h-20"></div>
 

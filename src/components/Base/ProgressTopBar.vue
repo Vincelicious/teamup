@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="flex justify-center items-center bg-primary-color py-4 w-screen"
+      class="flex justify-center items-center bg-primary-color h-14 w-screen"
     >
       <h1 class="text-white text-xl font-bold">Progress</h1>
     </div>
@@ -12,4 +12,8 @@
 export default {};
 </script>
 
-<style scoped></style>
+<style scoped>
+.h-14 {
+  height: 56px;
+}
+</style>

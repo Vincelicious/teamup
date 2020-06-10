@@ -15,14 +15,17 @@
 </template>
 <script>
 export default {
+  props: {
+    percentage: String
+  },
   methods: {
     format(percent) {
       if (percent == 20) {
-        return "1/5 km";
+        return "1/5";
       } else if (percent == 40) {
-        return "2/5 km";
+        return "2/5";
       } else if (percent == 60) {
-        return "3/5 km";
+        return "3/5";
       }
     }
   }
@@ -36,7 +39,7 @@ export default {
 }
 .k-progress {
   /* width: 238px; */
-  width: 420%;
+  width: 238px;
   /* margin-right: 0; */
 }
 @media screen and (max-width: 400px) {
