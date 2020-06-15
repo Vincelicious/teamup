@@ -1,15 +1,17 @@
 <template>
   <div>
     <div class="bg-primary-color text-center">
-      <h2 class="text-2xl text-white py-8">Team Up Group</h2>
+      <h2 class="top-bar text-xl text-white flex justify-center items-center">
+        Team Up Group
+      </h2>
     </div>
 
     <div class="bg-darkened-color flex justify-evenly text-white">
-      <div class="py-4 flex-1 text-center border-b-4 border-highlighted-color">
+      <div class="py-3 flex-1 text-center border-b-4 border-highlighted-color">
         Group
       </div>
-      <div class="py-4 flex-1 text-center">Scheme</div>
-      <div class="py-4 flex-1 text-center">Chat</div>
+      <div class="py-3 flex-1 text-center">Scheme</div>
+      <div class="py-3 flex-1 text-center">Chat</div>
     </div>
 
     <div class="container mx-auto px-4 py-8">
@@ -90,3 +92,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.top-bar {
+  height: 56px;
+}
+</style>
