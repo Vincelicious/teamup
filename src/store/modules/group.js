@@ -8,6 +8,12 @@ const state = {
 const getters = {
   getGroupById: state => id => {
     return state.groups.find(group => group.id == id);
+  },
+  getGroupByMemberId: state => id => {
+    return state.groups.find(group => group.members.includes(id));
+  },
+  getRandomGroup: state => {
+    return state.groups[Math.floor(Math.random() * state.groups.length)];
   }
 };
 
