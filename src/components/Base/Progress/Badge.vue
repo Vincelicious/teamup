@@ -4,18 +4,18 @@
       <div class="text-white flex">
         <!-- Left Icon -->
         <div class="badge-icon flex justify-center items-center">
-          <img src="@/assets/badges/wireframebadge.svg" />
+          <img :src="require(`@/assets/badges/progress/${image}`)" />
         </div>
         <!-- Badge information (right part) -->
         <div class="badge-info flex flex-col justify-center mb-3 ml-3">
           <div>
-            <h1 class="font-bold mt-3">Time in training</h1>
-            <p class="underline-text">How much time in hours</p>
+            <h1 class="font-bold mt-3">{{ title }}</h1>
+            <p class="underline-text">{{ desc }}</p>
           </div>
           <!-- Progress Bar -->
           <div class="flex items-center">
-            <div class="progressbar mr-3 mt-3"></div>
-            <div class="statistics text-white mt-2">10/200</div>
+            <ProgressBar></ProgressBar>
+            <!-- <div class="statistics text-white mt-2">10/200</div> -->
           </div>
         </div>
       </div>
@@ -24,7 +24,20 @@
 </template>
 
 <script>
-export default {};
+import ProgressBar from "@/components/Motivation/ProgressBar.vue";
+
+export default {
+  components: {
+    ProgressBar
+  },
+  props: {
+    recordBadges: Object,
+    image: String,
+    title: String,
+    desc: String,
+    progress: String
+  }
+};
 </script>
 
 <style scoped>

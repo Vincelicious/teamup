@@ -11,7 +11,7 @@
         />
         <p class="text-center text-2xl py-2 font-bold">04 : 54 : 12</p>
         <p class="text-center text-lg text-white opacity-50 py-2">
-         Your fastest finished target.
+          Your fastest finished target.
         </p>
         <!-- <ProgressBar></ProgressBar> -->
         <button @click.prevent="close" class="text-white button">
@@ -85,7 +85,7 @@ export default {
 .bg {
   position: absolute;
   top: 56px;
-  background: theme("colors.darkened-color");
+  background-color: rgb(133, 133, 133, 0.2);
   width: 100vw;
   height: calc(100vh - 56px);
 }

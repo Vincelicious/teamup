@@ -84,9 +84,9 @@ export default {
 
 .bg {
   position: absolute;
-  top: 56px;
-  background: theme("colors.darkened-color");
+  top: 60px;
+  background-color: rgba(46, 46, 66, 0.904);
   width: 100vw;
-  height: calc(100vh - 56px);
+  height: calc(100vh - 60px);
 }
 </style>

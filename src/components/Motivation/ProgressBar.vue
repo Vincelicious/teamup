@@ -1,8 +1,8 @@
 <template>
   <div class="app">
-    <div class="container px-4 py-2">
+    <div class="wrapper py-2 ">
       <k-progress
-        class="flex justify-center"
+        class="flex justify-between"
         :percent="60"
         active
         active-color="white"
@@ -15,14 +15,17 @@
 </template>
 <script>
 export default {
+  props: {
+    percentage: String
+  },
   methods: {
     format(percent) {
       if (percent == 20) {
-        return "1/5 km";
+        return "1/5";
       } else if (percent == 40) {
-        return "2/5 km";
+        return "2/5";
       } else if (percent == 60) {
-        return "3/5 km";
+        return "3/5";
       }
     }
   }
@@ -31,5 +34,17 @@ export default {
 <style>
 .k-progress-text {
   color: #ffffff;
+  /* margin-left: 25px; */
+  /* width:  */
+}
+.k-progress {
+  /* width: 238px; */
+  width: 238px;
+  /* margin-right: 0; */
+}
+@media screen and (max-width: 400px) {
+  .k-progress {
+    width: 390%;
+  }
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="app flex justify-center content-center bg" v-show="value">
     <div class="modal w-11/12">
       <div class="container flex flex-col">
-        <p class="text-center text-2xl pt-2 pb-6 font-bold ">Fastest KM</p>
+        <p class="text-center text-2xl pt-2 pb-6 font-bold ">Fastest Km</p>
         <lottie
           :options="defaultOptions"
           :height="200"
@@ -86,7 +86,7 @@ export default {
 .bg {
   position: absolute;
   top: 56px;
-  background: theme("colors.darkened-color");
+  background-color: rgba(207, 28, 28, 0.2);
   width: 100vw;
   height: calc(100vh - 56px);
 }
