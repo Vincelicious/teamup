@@ -4,7 +4,9 @@
       <div class="py-4 flex-1 text-center border-b-4 border-highlighted-color">
         Badge
       </div>
+      <!-- All the information about the runs -->
       <div class="py-4 flex-1 text-center">Statistics</div>
+      <!-- Previous trainings -->
       <div class="py-4 flex-1 text-center">History</div>
     </div>
   </div>
