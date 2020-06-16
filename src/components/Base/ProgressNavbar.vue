@@ -6,7 +6,7 @@
       </div>
       <!-- All the information about the runs -->
       <div class="py-4 flex-1 text-center">Statistics</div>
-      <!-- Previous trainings overview -->
+      <!-- Previous trainings -->
       <div class="py-4 flex-1 text-center">History</div>
     </div>
   </div>
