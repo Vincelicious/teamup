@@ -1,112 +1,125 @@
 <script src="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/dist/vue-slider-component.umd.min.js"></script>
 
 <template>
-  <div class="flex flex-col content-center h-screen m-3  text-white ">
-    <div class="flex mb-4 mt-8">
-      <zap-icon class="card-icon" />
-      <p>Groupname</p>
-    </div>
+  <div>
+    <TopBar pageTitle="Create Group"></TopBar>
 
-    <input
-      type="text"
-      class="flex justify-center content-center  bg-gray-900  p-3 rounded-lg"
-      id="name"
-      v-model="group.name"
-      placeholder="Groupname"
-    />
+    <div
+      class="container mx-auto px-4 flex flex-col content-center h-screen text-white "
+    >
+      <div class="flex mb-4 mt-20">
+        <zap-icon class="card-icon" />
+        <p>Groupname</p>
+      </div>
 
-    <div class="flex mb-4 mt-8">
-      <target-icon size="1x" class=" card-icon " />
-      <p>Marathon target</p>
-    </div>
-
-    <form class="target text-center">
-      <input type="radio" id="quarter" value="quarter" v-model="group.goal" />
-      <label for="quarter">Quarter</label>
-      <input type="radio" id="half" value="half" v-model="group.goal" />
-      <label for="half">Half</label>
-      <input type="radio" id="full" value="full" v-model="group.goal" />
-      <label for="full">Full</label>
-    </form>
-
-    <div class="flex mb-4 mt-8">
-      <calendar-icon class="card-icon" />
-      <p>Trainings days</p>
-    </div>
-
-    <form class="days text-center">
       <input
-        type="checkbox"
-        id="monday"
-        value="monday"
-        v-model="group.trainingDays"
+        type="text"
+        class="flex justify-center content-center  bg-gray-900  p-3 rounded-lg"
+        id="name"
+        v-model="group.name"
+        placeholder="Groupname"
       />
-      <label for="monday">Mo</label>
-      <input
-        type="checkbox"
-        id="tuesday"
-        value="tuesday"
-        v-model="group.trainingDays"
-      />
-      <label for="tuesday">Tu</label>
-      <input
-        type="checkbox"
-        id="wednesday"
-        value="wednesday"
-        v-model="group.trainingDays"
-      />
-      <label for="wednesday">We</label>
-      <input
-        type="checkbox"
-        id="thursday"
-        value="thursday"
-        v-model="group.trainingDays"
-      />
-      <label for="thursday">Th</label>
-      <input
-        type="checkbox"
-        id="friday"
-        value="friday"
-        v-model="group.trainingDays"
-      />
-      <label for="friday">Fr</label>
-      <input
-        type="checkbox"
-        id="saturday"
-        value="saturday"
-        v-model="group.trainingDays"
-      />
-      <label for="saturday">Sa</label>
-      <input
-        type="checkbox"
-        id="sunday"
-        value="sunday"
-        v-model="group.trainingDays"
-      />
-      <label for="sunday">Su</label>
-    </form>
 
-    <div class="flex mb-4 mt-8">
-      <users-icon class="card-icon" />
-      <p>Groupsize</p>
-    </div>
+      <div class="flex mb-4 mt-8">
+        <target-icon size="1x" class=" card-icon " />
+        <p>Marathon target</p>
+      </div>
 
-    <div class="slider">
-      <vue-slider v-model="group.groupsize" :min="2" :max="10" :tooltip-placement="['bottom']" :tooltip="'always'" />
-    </div>
+      <form class="target text-center">
+        <input type="radio" id="quarter" value="quarter" v-model="group.goal" />
+        <label for="quarter">Quarter</label>
+        <input type="radio" id="half" value="half" v-model="group.goal" />
+        <label for="half">Half</label>
+        <input type="radio" id="full" value="full" v-model="group.goal" />
+        <label for="full">Full</label>
+      </form>
 
-    <div id="button" class=" flex justify-between mb-4 mt-16">
-      <button
-        class=" flex justify-center border border-highlighted-color  py-2 px-4 rounded-lg w-5/12"
-      >
-        Cancel
-      </button>
-      <button
-        class=" flex justify-center bg-highlighted-color py-2 px-4 rounded-lg w-5/12"
-        v-on:click="create"
-      >
-        Create
-      </button>
+      <div class="flex mb-4 mt-8">
+        <calendar-icon class="card-icon" />
+        <p>Trainings days</p>
+      </div>
+
+      <form class="days text-center">
+        <input
+          type="checkbox"
+          id="monday"
+          value="monday"
+          v-model="group.trainingDays"
+        />
+        <label for="monday">Mo</label>
+        <input
+          type="checkbox"
+          id="tuesday"
+          value="tuesday"
+          v-model="group.trainingDays"
+        />
+        <label for="tuesday">Tu</label>
+        <input
+          type="checkbox"
+          id="wednesday"
+          value="wednesday"
+          v-model="group.trainingDays"
+        />
+        <label for="wednesday">We</label>
+        <input
+          type="checkbox"
+          id="thursday"
+          value="thursday"
+          v-model="group.trainingDays"
+        />
+        <label for="thursday">Th</label>
+        <input
+          type="checkbox"
+          id="friday"
+          value="friday"
+          v-model="group.trainingDays"
+        />
+        <label for="friday">Fr</label>
+        <input
+          type="checkbox"
+          id="saturday"
+          value="saturday"
+          v-model="group.trainingDays"
+        />
+        <label for="saturday">Sa</label>
+        <input
+          type="checkbox"
+          id="sunday"
+          value="sunday"
+          v-model="group.trainingDays"
+        />
+        <label for="sunday">Su</label>
+      </form>
+
+      <div class="flex mb-4 mt-8">
+        <users-icon class="card-icon" />
+        <p>Groupsize</p>
+      </div>
+
+      <div class="slider">
+        <vue-slider
+          v-model="group.groupsize"
+          :min="2"
+          :max="10"
+          :tooltip-placement="['bottom']"
+          :tooltip="'always'"
+        />
+      </div>
+
+      <div id="button" class=" flex justify-between mb-24 mt-24">
+        <router-link
+          :to="{ name: 'Group List' }"
+          class=" flex justify-center border border-highlighted-color  py-2 px-4 rounded-lg w-5/12"
+        >
+          Cancel
+        </router-link>
+        <button
+          class=" flex justify-center bg-highlighted-color py-2 px-4 rounded-lg w-5/12"
+          v-on:click="create"
+        >
+          Create
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -121,6 +134,7 @@ import {
   CalendarIcon,
   ZapIcon
 } from "vue-feather-icons";
+import TopBar from "@/components/Base/TopBar";
 
 export default {
   components: {
@@ -128,7 +142,8 @@ export default {
     UsersIcon,
     CalendarIcon,
     ZapIcon,
-    VueSlider
+    VueSlider,
+    TopBar
   },
   data: () => {
     return {
@@ -383,9 +398,9 @@ export default {
 }
 
 .days label {
-  width: 42px;
-  height: 42px;
-  padding: 9px 0px;
+  width: 48px;
+  height: 48px;
+  padding: 12px 0px;
   background-color: theme("colors.darkened-color");
   transition: all 0.3s;
   color: #fff;
