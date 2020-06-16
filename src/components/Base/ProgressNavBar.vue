@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-darkened-color flex justify-evenly text-white mb-10">
+    <div class="bg-darkened-color flex justify-evenly text-white mb-5">
       <div class="py-4 flex-1 text-center border-b-4 border-highlighted-color">
         Badge
       </div>

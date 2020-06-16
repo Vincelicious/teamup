@@ -5,14 +5,14 @@
     <ProgressNavBar></ProgressNavBar>
 
     <div class="container clickable">
-      <div class="recordbadges flex flex-start mb-3">
+      <div class="recordbadges flex flex-start mb-3 justify-center">
         <div class="badge1" @click="openLongestRun">
-          <div class="container  px-5">
+          <div class="container px-5">
             <div class="text-white flex flex-col items-center">
               <div class="badge-icon flex justify-center items-center">
                 <img src="@/assets/badges/Longest-Run-Badge.svg" />
               </div>
-              <div class="badge-info flex flex-col justify-center mb-3 ml-3">
+              <div class="badge-info flex flex-col justify-center mb-3">
                 <div>
                   <h1 class="font-bold mt-3">Longest Run</h1>
                   <p class="underline-text text-center">
@@ -29,7 +29,7 @@
               <div class="badge-icon flex justify-center items-center">
                 <img src="@/assets/badges/Fastest-Km-Badge.svg" />
               </div>
-              <div class="badge-info flex flex-col justify-center mb-3 ml-3">
+              <div class="badge-info flex flex-col justify-center mb-3">
                 <div>
                   <h1 class="font-bold mt-3">Fastest Km</h1>
                   <p class="underline-text text-center">
@@ -46,7 +46,7 @@
               <div class="badge-icon flex justify-center items-center">
                 <img src="@/assets/badges/Target-Badge.svg" />
               </div>
-              <div class="badge-info flex flex-col justify-center mb-3 ml-3">
+              <div class="badge-info flex flex-col justify-center mb-3">
                 <div>
                   <h1 class="font-bold mt-3">Best Finish</h1>
                   <p class="underline-text text-center">

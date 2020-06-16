@@ -5,7 +5,7 @@
     :height="height"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <use v-bind="{ 'xlink:href': 'img/feather-sprite.svg#' + name }" />
+    <use v-bind="{ 'xlink:href': '/teamup/img/feather-sprite.svg#' + name }" />
   </svg>
 </template>
 
