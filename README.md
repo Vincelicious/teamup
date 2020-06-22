@@ -10,6 +10,15 @@ Many people see the marathon as a milestone and want to experience the experienc
 
 At this link: https://dayotoirkens.nl/teamup you can view a demo of the project.
 
+## Usage
+
+Things you can do with the demo:
+
+- Create a group
+- View the joinable grouplist / groupoverview
+- View badge animations in the progress section
+- Link users to groups 
+
 ## Getting Started
 These instructions will get you a copy of the project up and running on your development enviroment.
 
