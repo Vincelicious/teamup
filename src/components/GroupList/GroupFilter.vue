@@ -1,7 +1,21 @@
 <script src="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/dist/vue-slider-component.umd.min.js"></script>
 
 <template>
+
+
   <div class="flex flex-col content-center h-screen m-3  text-white ">
+
+
+<div class="filterButton">
+  <button class="filterB" @click="showModal = true">
+    Filter
+  </button>
+  <transition name="fade" appear>
+    <div class="modal-overlay" v-if="showModal" @click="showModal = true" >
+    
+
+
+
 
   <div class="flex mb-4 mt-8">
       <calendar-icon class="card-icon" />
@@ -105,7 +119,20 @@
         Filter
       </button>
     </div>
+    </div>
+
+
+</transition>
+    <transtion name="slide" appear>
+      <div class="modal" v-if="showModal">
+        <button class="buttonK" @click="showModal = false">Close Filter</button>
+      </div>
+    </transtion>
+
+        
   </div>
+  </div>
+  
 </template>
 
 <script>
@@ -140,9 +167,12 @@ export default {
         groupsize: 2,
         groupdistance: 2
 
-      }
+      },
+      showModal: true
     };
   },
+
+
   methods: {
     create: function() {
       GroupService.createGroup({
@@ -174,6 +204,73 @@ export default {
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/theme/default.css"
 >
+
+
+.filterButton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 98;
+  background-color: rgba(0, 0, 0, 0.3)
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 0.5s;
+}
+
+.slide-enter,
+.slide-leave-to {
+ transform: translateY(-50%) translateX(100vw);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+
+  width: 100;
+  max-width: 400px;
+  border-radius: 16px;
+}
+
+.buttonK{
+  position: relative;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 .card-icon {
   margin-right: 0.5em;
   height: 1.2em;
